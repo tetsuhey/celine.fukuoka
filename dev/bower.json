@@ -1,0 +1,17 @@
+{
+  "name": "celine",
+  "homepage": "https://github.com/tetsuhey/celine.fukuoka",
+  "authors": [
+    "Okada Tetsuhei <tetsuhei.okada.8920@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
