@@ -2,11 +2,11 @@
 html, body{
     font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
     font-size:12px;
-    line-height: 22pt;
+    line-height: 1.5em;
     width:100%;
 }
 h1{
-    font-family: 'Montserrat', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     letter-spacing: .1em;
     font-size:16px;
@@ -19,10 +19,12 @@ h1 span.harf_bd{
     
 }
 h2{
-    font-size:14px;
+    font-size:16px;
+    font-weight: bold;
 }
 h3{
-    font-size:13px;
+    font-size:14px;
+    font-weight: bold;
 }
 small{
     font-size: 9px;
@@ -47,6 +49,62 @@ section{
 
 .triangle.baju{
     background:linear-gradient(to top left, #fff 50%, #FAF8F5 50%) no-repeat top left/100% 100%;
+}
+.center{
+    text-align: center;
+}
+
+.btn{
+    background-color: white;
+    padding: 12px 24px;
+    text-align: center;
+    border: 2px solid #151515;
+    min-width: 220px;
+    border-radius: 0;
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: 16px;
+    position: relative;
+}
+.btn::before{
+    content: "";
+    width: 16px;
+    height: 16px;
+    background:linear-gradient(to top left, #fff 50%, #151515 50%) no-repeat top left/100% 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.bold{
+    font-weight: bold;
+}
+.bk-black{
+    background-color: #151515;
+    color: white;
+    padding: 4px;
+}
+.bk-gray{
+    background-color: #f5f5f5;
+    padding: 4px;
+}
+.main_cap{
+    position: relative;
+    margin-bottom: 32px;
+}
+.main_cap::after{
+    content:"";
+    position: absolute;
+    width:32px;
+    height: 2px;
+    background-color: #151515;
+    bottom: -8px;
+    left: 50%;
+    margin-left: -16px;
+}
+.tbl{
+    border: 1px solid #151515;
+    padding:16px;
+    margin-bottom: 16px;
 }
 
 
@@ -191,8 +249,9 @@ header .humberger span:nth-child(3){
     font-size: 13px;
     font-weight: bold;
     background-repeat: no-repeat;
-    background-size: 21px;
+    background-size: 24px;
     padding-left: 28px;
+    line-height: 32px;
 }
 .numbers1 li::before{
     content: "|";
@@ -219,4 +278,347 @@ header .humberger span:nth-child(3){
 }
 #tokuten h1{
     padding-bottom:24px;
+}
+#tokuten h2,
+#campain h2{
+    position: relative;
+    text-align: center;
+    margin-bottom: 8px;
+}
+#tokuten h2::before,
+#tokuten h2::after,
+#campain h2::before,
+#campain h2::after{
+    content: "|";
+    display: inline-block;
+    position: absolute;
+}
+#tokuten h2::before,
+#campain h2::before{
+    transform: rotate(-30deg);
+    left:24px;
+}
+#tokuten h2::after,
+#campain h2::after{
+    transform: rotate(30deg);
+    right: 24px;
+}
+#tokuten div.d-flex,
+#campain div.d-flex{
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+#tokuten .container > *,
+#campain .container .d-flex > *{
+    font-weight: bold;
+    line-height: 1em;
+}
+#tokuten img,
+#campain img{
+    width: 39%;
+}
+#tokuten .inner,
+#campain .inner{
+    width:60%;
+    margin-left: 16px;
+}
+#tokuten p,
+#campain .container .d-flex p{
+    font-size: 6.4vw;
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 8px;
+}
+#tokuten .semaku,
+#campain .semaku{
+    letter-spacing: -3px;
+}
+#tokuten .accent,
+#campain .accent{
+    color: #F15A24;
+    font-size: 14px;
+    writing-mode: tb;
+    height: 2em;
+}
+.bdd{
+    border-bottom: double #151515;
+}
+
+/* 福岡の女性のみなさまへ */
+.sml_caption{
+    font-family: 'Montserrat', sans-serif;
+    padding: 4px 24px;
+    font-size: 9px;
+    font-weight: 400;
+    font-weight: normal;
+    border:0.5px solid #151515;
+    background-color: white;
+    letter-spacing: 2px;
+    position: relative;
+    text-align: center;
+    min-width: 150px;
+    display: inline-block;
+    line-height: 1em;
+}
+.sml_caption::before{
+    content:"";
+    position: absolute;
+    background-image: url(../res/arrow-black2.svg);
+    background-repeat: no-repeat;
+    width: 12px;
+    height: 10px;
+    top: 16px;
+    left:50%;
+    margin-left: -6px;
+}
+#dear h1{
+    margin: 16px 0;
+}
+#dear h1 span{
+    border-bottom: 1px solid #151515;
+}
+#dear li{
+    margin-top: 8px;
+}
+#dear li img{
+    margin-right: 8px;
+}
+
+/* Chat lady */
+#chatlady h2 img{
+    width:100%;
+    height: auto;
+    border:2px solid #151515;
+
+}
+.chatlady_desc_wrap{
+    position: relative;
+}
+.chatlady_desc_wrap .blackline{
+    position: absolute;
+    top: 0;
+    bottom: -32px;
+    width: 32px;
+    background-color: #151515;
+}
+.chatlady_desc_wrap div{
+    padding-left: 48px;
+    padding-top: 24px;
+    position: relative;
+}
+.chatlady_desc_wrap div span{
+    position: absolute;
+    left: 2px;
+    color: white;
+    font-weight: bold;
+}
+.chatlady_desc_wrap div h3{
+    font-size: 16px;
+    display: inline-block;
+    border-bottom:1px solid #151515;
+    margin-bottom: 16px;
+}
+
+/* workstyle */
+#workstyle .dottedbox{
+}
+.custome_dott{
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+}
+.custome_dott::before{
+    content:'';
+    background-image: linear-gradient(to right, #000, #000 1px, transparent 1px, transparent 5px);
+    background-size: 5px 1px;
+    background-repeat: repeat-x;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#workstyle h2{
+    display: inline-block;
+    margin: 16px 0;
+    border-bottom:1px solid #151515;
+}
+#workstyle h3{
+    padding: 8px 0;
+}
+
+/* Benefit */
+.bene-img-wrap{
+    position: relative;
+    background-color: #FAF8F5;
+    width: 100%;
+    height: 130px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+.bene-img-wrap::after{
+    content:"";
+    position: absolute;
+    background:linear-gradient(to top left, transparent 50%, #FAF8F5 50%) no-repeat top left/100% 100%;
+    width: 100%;
+    height: 30px;
+    bottom: -30px;
+}
+.bene-img-wrap img{
+    position: absolute;
+    width:100px;
+    height: auto;
+    top: -50px;
+    left: 50%;
+    margin-left: -125px;
+    z-index: 1;
+}
+.bene-img-wrap h2{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -8px;
+    line-height: 24px;
+    text-align: center;
+}
+.bene-img-wrap h2{
+    margin-top: -8px;
+}
+.bene-img-wrap h2::before{
+    content:"";
+    position: absolute;
+    left: 50%;
+    width:24px;
+    height: 8px;
+    margin-top: -16px;
+    margin-left: -16px;
+    background-image: url(../res/stars.svg);
+    background-repeat: no-repeat;
+}
+
+/* INCOME */
+#income .bk-black{
+    margin-top: 32px;
+}
+
+/* OFFICE */
+#office .icon-wrap{
+    text-align: center;
+}
+#office .icon-wrap img{
+    margin-bottom: 16px;
+}
+
+/* Q&A */
+#qa .bk-gray{
+    margin-bottom: 16px;
+    padding: 8px 16px;
+}
+#qa .bk-gray.nm{
+    margin-bottom: 0;
+}
+#qa .bk-black{
+    position: relative;
+    line-height: 32px;
+    padding-left: 16px;
+}
+#qa .qa_btn{
+    position: absolute;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+    top: 4px;
+    background-color: rgba(255,255,255,.7);
+    color: white;
+}
+#qa .qa_btn::before{
+    content: "-";
+}
+
+/* FLOW */
+#flow .numbers1{
+    margin-left: 16px;
+    /* margin-right: 16px; */
+    margin-top: 8px;
+}
+#flow .numbers1 h2{
+    display: inline-block;
+    margin-top: 6px;
+}
+#flow .numbers1 li{
+    margin-top: 24px;
+}
+#flow .numbers1 p{
+    line-height: 1.5em;
+    font-weight: normal;
+    padding-left: 16px;
+}
+
+/* APPLY */
+.form-wrap{
+    border:2px solid #C7B299;
+    margin-top: 24px;
+}
+form{
+    margin: 2px;
+    padding: 16px;
+    border: 1px solid #C7B299;
+}
+form h2{
+    margin-bottom: 24px;
+    text-align: center;
+}
+form small.require{
+    color:#F15A24;
+    padding-left: 0px;
+}
+form h3{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+form small{
+    color:#666;
+    padding-left: 8px;
+}
+form input{
+    margin: 0;
+    padding: 4px 8px;
+    border: 0;
+    border-bottom: 1px solid #151515;
+    margin-bottom: 24px;
+    font-size: 16px;
+}
+form input[name="age"]{
+    width: 3em;
+}
+form textarea{
+    border:1px solid #151515;
+    border-radius: 0;
+    text-align: left;
+    padding: 4px 8px;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+form input[name="name"],
+form input[name="mail"],
+form textarea{
+    width:100%;
+}
+
+/* footer */
+footer{
+    background-color: #151515;
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    color: white;
+}
+footer .logo{
+    font-size: 32px;
+    margin: 16px 0;
 }
