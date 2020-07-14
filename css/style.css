@@ -440,10 +440,10 @@ header .humberger span:nth-child(3){
 }
 .chatlady_desc_wrap div span{
     position: absolute;
-    left: .2em;
-    font-size: 1.2em;
+    left: .25em;
+    font-size: 1em;
     color: white;
-    font-weight: bold;
+    font-weight: 600;
 }
 .chatlady_desc_wrap div h3{
     font-size: 16px;
@@ -676,6 +676,27 @@ form input[name="name"],
 form input[name="mail"],
 form textarea{
     width:100%;
+}
+#apply .another-apply .btn span{
+    display: block;
+    position: relative;
+}
+#apply .another-apply .btn span::before{
+    content:'';
+    background-repeat: no-repeat;
+    position: absolute;
+    width:32px;
+    height: 32px;
+    margin-left: -40px;
+}
+#apply .line::before{
+    background-image: url(../res/icon-line.svg);
+}
+#apply .phone::before{
+    background-image: url(../res/icon-phone.svg);
+}
+#apply .mail::before{
+    background-image: url(../res/icon-mail.svg);
 }
 
 /* footer */
