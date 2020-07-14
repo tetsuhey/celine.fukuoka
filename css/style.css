@@ -1,6 +1,7 @@
 /* common */
 html, body{
     font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+    font-weight: 500;
     font-size:12px;
     line-height: 1.75em;
     letter-spacing: .03em;
@@ -43,8 +44,8 @@ section{
 .arrow{
     display: inline-block;
     transform:rotate(90deg);
-    padding-right: .3em;
-    font-size: .4em;
+    padding-right: .4em;
+    font-size: .7em;
 }
 .triangle.gray{
     background:linear-gradient(to top left, #fff 50%, #f5f5f5 50%) no-repeat top left/100% 100%;
@@ -65,7 +66,7 @@ section{
     min-width: 220px;
     border-radius: 0;
     font-weight: bold;
-    font-size: 1.3em;
+    font-size: 1.2em;
     margin-top: 16px;
     position: relative;
     cursor: pointer;
@@ -109,6 +110,7 @@ section{
     border: 1px solid #151515;
     padding:16px;
     margin-bottom: 16px;
+    background-color: white;
 }
 
 
@@ -354,7 +356,7 @@ header .humberger span:nth-child(3){
 }
 #tokuten p,
 #campain .container .d-flex p{
-    font-size: 6.3vw;
+    font-size: 6.2vw;
     display: inline-block;
     margin-top: 8px;
     margin-left: 8px;
@@ -381,8 +383,7 @@ header .humberger span:nth-child(3){
     padding: 4px 24px;
     font-size: 9px;
     font-weight: 400;
-    font-weight: normal;
-    border:0.5px solid #151515;
+    border:1px solid #151515;
     background-color: white;
     letter-spacing: 2px;
     position: relative;
@@ -658,6 +659,7 @@ form input{
     border-bottom: 1px solid #151515;
     margin-bottom: 24px;
     font-size: 16px;
+    border-radius: 0;
 }
 form input[name="age"]{
     width: 3em;
