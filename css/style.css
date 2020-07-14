@@ -2,7 +2,8 @@
 html, body{
     font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
     font-size:12px;
-    line-height: 1.5em;
+    line-height: 1.75em;
+    letter-spacing: .03em;
     width:100%;
 }
 h1{
@@ -42,6 +43,8 @@ section{
 .arrow{
     display: inline-block;
     transform:rotate(90deg);
+    padding-right: .3em;
+    font-size: .4em;
 }
 .triangle.gray{
     background:linear-gradient(to top left, #fff 50%, #f5f5f5 50%) no-repeat top left/100% 100%;
@@ -62,9 +65,10 @@ section{
     min-width: 220px;
     border-radius: 0;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1.3em;
     margin-top: 16px;
     position: relative;
+    cursor: pointer;
 }
 .btn::before{
     content: "";
@@ -141,6 +145,7 @@ header .humberger{
     text-align: center;
     transition: all .5s;
     cursor: pointer;
+    z-index: 10;
 }
 header .humberger span{
     display: block;
@@ -160,6 +165,31 @@ header .humberger span:nth-child(2){
 }
 header .humberger span:nth-child(3){
     bottom: 13px;
+}
+.smpMenu{
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 100vw;
+    right: 0;
+    background-color: rgba(0,0,0,0.8);
+    transition: ease-in-out all .3s;
+    z-index: 100;
+}
+.smpMenu.open{
+    left: 0;
+}
+.smpMenu ul{
+    margin-top: 24px;
+}
+.smpMenu li{
+    padding: 16px 0;
+    color: white;
+    font-size: 1.3em;
+    border-bottom: .5px solid white;
+}
+.smpMenu li:nth-child(1){
+    border-top: .5px solid white;
 }
 
 
@@ -324,9 +354,9 @@ header .humberger span:nth-child(3){
 }
 #tokuten p,
 #campain .container .d-flex p{
-    font-size: 6.4vw;
+    font-size: 6.3vw;
     display: inline-block;
-    margin-top: 5px;
+    margin-top: 8px;
     margin-left: 8px;
 }
 #tokuten .semaku,
@@ -336,9 +366,10 @@ header .humberger span:nth-child(3){
 #tokuten .accent,
 #campain .accent{
     color: #F15A24;
-    font-size: 14px;
-    writing-mode: tb;
-    height: 2em;
+    font-size: 3.7vw;
+    writing-mode: horizontal-tb;
+    width: 1em;
+    line-height: 1.2em;
 }
 .bdd{
     border-bottom: double #151515;
@@ -408,7 +439,8 @@ header .humberger span:nth-child(3){
 }
 .chatlady_desc_wrap div span{
     position: absolute;
-    left: 2px;
+    left: .2em;
+    font-size: 1.2em;
     color: white;
     font-weight: bold;
 }
@@ -503,19 +535,39 @@ header .humberger span:nth-child(3){
 #income .bk-black{
     margin-top: 32px;
 }
+#income li{
+    margin-top: 8px;
+    font-size: 1.1em;
+}
 
 /* OFFICE */
 #office .icon-wrap{
     text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    font-weight: bold;
 }
 #office .icon-wrap img{
-    margin-bottom: 16px;
+    margin-bottom: 8px;
 }
 
 /* Q&A */
 #qa .bk-gray{
-    margin-bottom: 16px;
+    padding: 0;
+    max-height: 0;
+    overflow-y: hidden;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+#qa .bk-gray p{
     padding: 8px 16px;
+}
+#qa .bk-gray.open{
+    max-height: 100px;
+    opacity: 1;
 }
 #qa .bk-gray.nm{
     margin-bottom: 0;
@@ -531,11 +583,25 @@ header .humberger span:nth-child(3){
     width: 32px;
     height: 32px;
     top: 4px;
-    background-color: rgba(255,255,255,.7);
     color: white;
+    cursor: pointer;
 }
 #qa .qa_btn::before{
-    content: "-";
+    content: "";
+    position: absolute;
+    width:10px;
+    height: 10px;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    top: 50%;
+    left: 50%;
+    margin-top: -5px;
+    margin-left: -6px;
+    transform: rotate(45deg);
+    transition: all .3s;
+}
+#qa .qa_btn.open::before{
+    transform: rotate(135deg);
 }
 
 /* FLOW */
