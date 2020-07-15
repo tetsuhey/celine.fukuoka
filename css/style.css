@@ -17,9 +17,6 @@ h1{
 h1 span.full_bd{
     border-bottom: 1px solid #151515;
 }
-h1 span.harf_bd{
-    
-}
 h2{
     font-size:16px;
     font-weight: bold;
@@ -113,6 +110,55 @@ section{
     background-color: white;
 }
 
+@media screen and (min-width:767px) and ( max-width:992px) {
+    html, body{
+        font-size:14px;
+    }
+    h1{
+        font-size: 16px;
+    }
+    h2{
+        font-size: 15px;
+    }
+    h3{
+        font-size: 14px;
+    }
+    small{
+        font-size: 10px;
+    }
+    .container{
+        max-width: 100%;
+    }
+}
+@media screen and (min-width:993px) {
+    html, body{
+        font-size:16px;
+        width: 100%;
+    }
+    h1{
+        font-size: 18px;
+    }
+    h2{
+        font-size: 17px;
+    }
+    h3{
+        font-size: 16px;
+    }
+    small{
+        font-size: 11px;
+    }
+    .smpMenu{
+        display: none;
+        visibility: hidden;
+    }
+    section{
+        padding-bottom:40px;
+        padding-top:40px;
+        /* max-width: 1200px;
+        margin: 0 auto; */
+    }
+}
+
 
 /* header */
 header{
@@ -171,12 +217,14 @@ header .humberger span:nth-child(3){
 .smpMenu{
     position: fixed;
     top: 50px;
-    bottom: 0;
+    bottom:0;
     left: 100vw;
-    right: 0;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.9);
     transition: ease-in-out all .3s;
     z-index: 100;
+    width: 100vw;
+    overflow-y: scroll;
+    padding-bottom: 32px;
 }
 .smpMenu.open{
     left: 0;
@@ -185,7 +233,7 @@ header .humberger span:nth-child(3){
     margin-top: 24px;
 }
 .smpMenu li{
-    padding: 16px 0;
+    padding: 24px 0;
     color: white;
     font-size: 1.3em;
     border-bottom: .5px solid white;
@@ -193,7 +241,15 @@ header .humberger span:nth-child(3){
 .smpMenu li:nth-child(1){
     border-top: .5px solid white;
 }
-
+@media screen and (min-width:767px) and ( max-width:992px) {
+}
+@media screen and (min-width:993px) {
+    header .humberger,
+    .smpMenu{
+        display: none;
+        visibility: hidden;
+    }
+}
 
 /* TOP image */
 #top-image{
@@ -233,7 +289,7 @@ header .humberger span:nth-child(3){
 #top-image .cap2{
     position: absolute;
     top:0;
-    right:0;
+    right:9px;
     width:36px;
     height:149px;
     background-color:#EBFC21;
@@ -301,6 +357,19 @@ header .humberger span:nth-child(3){
 }
 .numbers1 li:nth-child(4){
     background-image: url(../res/number1_04.svg);
+}
+@media screen and (min-width:767px) and ( max-width:992px) {
+    .numbers1 li{
+        font-size: 15px;
+    }
+}
+@media screen and (min-width:993px) {
+    .numbers1 li{
+        font-size: 17px;
+    }
+    .mainDesc{
+        padding: 32px 0;
+    }
 }
 
 
@@ -376,6 +445,48 @@ header .humberger span:nth-child(3){
 .bdd{
     border-bottom: double #151515;
 }
+@media screen and (min-width:767px) and ( max-width:992px) {
+    #tokuten p{
+        font-size: 3vw;
+    }
+    #tokuten .accent,
+    #campain .accent{
+        font-size: 16px;
+    }
+    #campain .container .d-flex p{
+        font-size: 4vw;
+        margin-top: 0;
+    }
+    #campain h2::before{
+        left:8vw;
+    }
+    #campain h2::after{
+        right: 8vw;
+    }
+}
+@media screen and (min-width:993px) {
+    #tokuten p,
+    #campain .container .d-flex p{
+        font-size: 32px;
+    }
+    #tokuten .accent{
+        font-size: 16px;
+    }
+    #campain h2::before{
+        left:8vw;
+    }
+    #campain h2::after{
+        right: 8vw;
+    }
+    #campain .container .d-flex p{
+        margin-top: 0;
+        font-size: 40px;
+        margin-left: 16px;
+    }
+    #campain .accent{
+        font-size: 24px;
+    }
+}
 
 /* 福岡の女性のみなさまへ */
 .sml_caption{
@@ -415,6 +526,10 @@ header .humberger span:nth-child(3){
 #dear li img{
     margin-right: 8px;
 }
+@media screen and (min-width:767px) and ( max-width:992px) {
+}
+@media screen and (min-width:993px) {
+}
 
 /* Chat lady */
 #chatlady h2 img{
@@ -451,6 +566,10 @@ header .humberger span:nth-child(3){
     border-bottom:1px solid #151515;
     margin-bottom: 16px;
 }
+@media screen and (min-width:767px) and ( max-width:992px) {
+}
+@media screen and (min-width:993px) {
+}
 
 /* workstyle */
 #workstyle .dottedbox{
@@ -481,6 +600,10 @@ header .humberger span:nth-child(3){
 }
 #workstyle h3{
     padding: 8px 0;
+}
+@media screen and (min-width:767px) and ( max-width:992px) {
+}
+@media screen and (min-width:993px) {
 }
 
 /* Benefit */
@@ -531,6 +654,13 @@ header .humberger span:nth-child(3){
     background-image: url(../res/stars.svg);
     background-repeat: no-repeat;
 }
+@media screen and (min-width:767px) and ( max-width:992px) {
+}
+@media screen and (min-width:993px) {
+    .msg{
+        margin-top: 74px;
+    }
+}
 
 /* INCOME */
 #income .bk-black{
@@ -539,6 +669,10 @@ header .humberger span:nth-child(3){
 #income li{
     margin-top: 8px;
     font-size: 1.1em;
+}
+@media screen and (min-width:767px) and ( max-width:992px) {
+}
+@media screen and (min-width:993px) {
 }
 
 /* OFFICE */
@@ -550,6 +684,10 @@ header .humberger span:nth-child(3){
 }
 #office .icon-wrap img{
     margin-bottom: 8px;
+}
+@media screen and (min-width:767px) and ( max-width:992px) {
+}
+@media screen and (min-width:993px) {
 }
 
 /* Q&A */
@@ -564,10 +702,10 @@ header .humberger span:nth-child(3){
     transition: all 0.5s;
 }
 #qa .bk-gray p{
-    padding: 8px 16px;
+    padding: 32px 32px;
 }
 #qa .bk-gray.open{
-    max-height: 100px;
+    max-height: 200px;
     opacity: 1;
 }
 #qa .bk-gray.nm{
@@ -604,6 +742,10 @@ header .humberger span:nth-child(3){
 #qa .qa_btn.open::before{
     transform: rotate(135deg);
 }
+@media screen and (min-width:767px) and ( max-width:992px) {
+}
+@media screen and (min-width:993px) {
+}
 
 /* FLOW */
 #flow .numbers1{
@@ -622,6 +764,10 @@ header .humberger span:nth-child(3){
     line-height: 1.5em;
     font-weight: normal;
     padding-left: 16px;
+}
+@media screen and (min-width:767px) and ( max-width:992px) {
+}
+@media screen and (min-width:993px) {
 }
 
 /* APPLY */
@@ -698,6 +844,24 @@ form textarea{
 #apply .mail::before{
     background-image: url(../res/icon-mail.svg);
 }
+@media screen and (min-width:767px){
+    .another-apply .btn{
+        max-width: 30%;
+        margin: 16px 10px;
+        margin-top: 32px;
+    }
+    #apply .another-apply .btn span{
+        padding-left: 24px;
+    }
+    #apply .another-apply .btn span::before{
+        margin-left: -32px;
+    }
+    #apply .mail::before{
+        top:4px;
+    }
+}
+@media screen and (min-width:993px) {
+}
 
 /* footer */
 footer{
@@ -710,4 +874,8 @@ footer{
 footer .logo{
     font-size: 32px;
     margin: 16px 0;
+}
+@media screen and (min-width:767px) and ( max-width:992px) {
+}
+@media screen and (min-width:993px) {
 }
