@@ -17,4 +17,8 @@ $(function(){
         $(".menu_btn").removeClass('open');
         $(".smpMenu").removeClass('open')
     });
+    $("#apply_btn, #contact_btn").on("click", function(){
+        var pos = $("#apply").offset().top -50;
+        $("html,body").animate({scrollTop:pos},600);
+    });
 });

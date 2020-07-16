@@ -83,7 +83,7 @@
 <body>
     <header id="header">
         <span class="subdesc">福岡で今一番人気のプロダクション</span>
-	    <p class="text_logo">celine.</p>
+	    <!-- <p class="text_logo">celine.</p> -->
         <div class="humberger menu_btn">
             <span></span><span></span><span></span>
         </div>
@@ -104,13 +104,15 @@
     </header>
 
     <section id="top-image">
-        <img src="./res/top_smp.jpg" alt="main image" />
-        <div class="cap1">
+        <img class="top-smp" src="./res/top-smp.jpg" alt="main image" />
+        <img class="top-tab" src="./res/top-tab.jpg" alt="main image" />
+        <img class="top-pc" src="./res/top-pc.jpg" alt="main image" />
+        <!-- <div class="cap1">
             <span>celine.</span><span>FUKUOKA</span>
         </div>
         <div class="cap2">
             <span>LIVE CHAT</span><br /><span>PRODUCTION</span>
-        </div>
+        </div> -->
         <div class="mainDesc">
             <div class="container">
                 <div class="row">
@@ -161,7 +163,7 @@
             </div>
         </div>
         <div class="center">
-            <div class="btn">今すぐ応募</div>
+            <div id="apply_btn" class="btn">今すぐ応募</div>
         </div>
     </section>
 
@@ -173,7 +175,7 @@
             <h1><span>福岡の女性の皆様へ</span></h1>
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-10 offset-md-1">
+                    <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
                         <p class="bk-black center">こんなことを思っていませんか？</p>
                         <ul class="tbl">
                             <li>
@@ -202,7 +204,7 @@
                 </div>
             </div>
             <div class="center">
-                <div class="btn">お問い合わせはこちら</div>
+                <div id="contact_btn" class="btn">お問い合わせはこちら</div>
             </div>
         </div>
     </section>
@@ -211,10 +213,14 @@
         <h1 class="main_cap">CHAT LADY</h1>
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <h2><img src="./res/working_chatlady.jpg" alt="チャットレディのお仕事について"></h2>
+                <div class="col-12 col-lg-10 offset-lg-1">
+                    <h2>
+                        <img class="top-smp" src="./res/working_chatlady-smp.jpg" alt="チャットレディのお仕事について" />
+                        <img class="top-tab" src="./res/working_chatlady-tab.jpg" alt="チャットレディのお仕事について" />
+                        <img class="top-pc" src="./res/working_chatlady-pc.jpg" alt="チャットレディのお仕事について" />
+                    </h2>
                 </div>
-                <div class="col-12 chatlady_desc_wrap">
+                <div class="col-12 col-lg-10 offset-lg-1 chatlady_desc_wrap">
                     <p class="blackline"></p>
                     <div class="each">
                         <span>#01</span>
@@ -247,33 +253,30 @@
             <div class="row">
                 <p class="bold center col-12 col-md-10 offset-md-1"> celine.は出勤ノルマが一切ないので、スケジュール管理も自由自在。目的に応じたシフトを組めます。</p>
             </div>
-            <div class="row">
-                <div class="custome_dott"></div>
-                <div class="dottedbox center col-12 col-md-6 offset-md-3">
-                    <span class="sml_caption">CASE A</span>
+            <div class="row custome_dott_wrap">
+                <div class="dottedbox center col-12 col-lg-4">
+                    <span class="sml_caption">CASE A</span><br />
                     <h2>スキマ時間で堅実に稼ぎたい</h2>
                     <h3>週1回1日4時間の勤務で毎月5万円</h3>
                     <p>時給3,200円×4時間＝12,800円</p>
                     <p>月4日勤務で&nbsp;&nbsp;<span class="arrow">&#9650;</span>&nbsp;&nbsp;51,200円GET!</p>
                 </div>
-                <div class="custome_dott"></div>
-                <div class="dottedbox center col-12 col-md-6 offset-md-3">
-                    <span class="sml_caption">CASE B</span>
+                <div class="dottedbox center col-12 col-lg-4">
+                    <span class="sml_caption">CASE B</span><br />
                     <h2>副業で休日だけ出勤したい</h2>
                     <h3>週2回1日4時間の勤務で毎月10万円</h3>
                     <p>時給3,200円×4時間＝12,800円</p>
                     <p>月8日勤務で&nbsp;&nbsp;<span class="arrow">&#9650;</span>&nbsp;&nbsp;102,400円GET!</p>
                 </div>
-                <div class="custome_dott"></div>
-                <div class="dottedbox center col-12 col-md-6 offset-md-3">
-                    <span class="sml_caption">CASE C</span>
+                <div class="dottedbox center col-12 col-lg-4">
+                    <span class="sml_caption">CASE C</span><br />
                     <h2>しっかり入って大きく稼ぎたい</h2>
                     <h3>週5回1日8時間の勤務で毎月60万円</h3>
                     <p>時給4,000円×8時間＝32,000円</p>
                     <p>月20日勤務で&nbsp;&nbsp;<span class="arrow">&#9650;</span>&nbsp;&nbsp;640,400円GET!</p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mt-16">
                 <div class="custome_dott"></div>
                 <p class="col-12 col-md-10 offset-md-1">あなたが<strong>稼ぎたい金額に応じてご自分でスケジュール管理</strong>が出来ます。もちろんどんなスケジュールにして良いのか分からない方でも、希望額に応じてスケジュール提案もいたします。
                     <strong>頑張れば頑張る程どんどん時給がアップ</strong>するので、やりがいも抜群です！</p>
@@ -365,8 +368,8 @@
             <div class="row">
                 <p class="bold center col-12 col-md-10 offset-md-1">celine.は福岡でいちばん働きやすい環境を用意しています。そのほかにも、celine.で働くメリットがいっぱい！</p>
             </div>
-            <div class="row">
-                <div class="custome_dott"></div>
+            <div class="row custome_dott_wrap">
+                
                 <div class="col-12 col-md-6">
                     <div class="container">
                         <div class="row">
@@ -378,7 +381,7 @@
                         </div>
                     </div>    
                 </div>
-                <div class="custome_dott d-md-none"></div>
+                
                 <div class="col-12 col-md-6">
                     <div class="container">
                         <div class="row">
@@ -390,7 +393,7 @@
                         </div>
                     </div>    
                 </div>
-                <div class="custome_dott"></div>
+                
                 <div class="col-12 col-md-6">
                     <div class="container">
                         <div class="row">
@@ -402,7 +405,7 @@
                         </div>
                     </div>    
                 </div>
-                <div class="custome_dott d-md-none"></div>
+                
                 <div class="col-12 col-md-6">
                     <div class="container">
                         <div class="row">
@@ -416,7 +419,7 @@
                         </div>
                     </div>    
                 </div>
-                <div class="custome_dott"></div>
+                
                 <div class="col-12 col-md-6">
                     <div class="container">
                         <div class="row">
@@ -429,7 +432,7 @@
                         </div>
                     </div>    
                 </div>
-                <div class="custome_dott d-md-none"></div>
+                
                 <div class="col-12 col-md-6">
                     <div class="container">
                         <div class="row">
@@ -441,7 +444,7 @@
                         </div>
                     </div>    
                 </div>
-                <div class="custome_dott"></div>
+                
                 <div class="col-12 col-md-6">
                     <div class="container">
                         <div class="row">
@@ -454,7 +457,7 @@
                         </div>
                     </div>    
                 </div>
-                <div class="custome_dott d-md-none"></div>
+                
                 <div class="col-12 col-md-6">
                     <div class="container">
                         <div class="row">
@@ -564,19 +567,19 @@
             <div class="row">
             
                     <ul class="numbers1">
-                        <li class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-0">
+                        <li class="col-12 col-md-8 offset-md-2">
                             <h2>ご応募・お問い合わせ</h2>
                             <p>まずは、ご応募下さい。応募は、LINE@、メール、お電話のいずれかで受け付けています。お好きなご連絡方法でご応募下さい。</p>
                         </li>
-                        <li class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-0">
+                        <li class="col-12 col-md-8 offset-md-2">
                             <h2>ご連絡・ご面談</h2>
                             <p>お問い合わせいただいた方は担当者よりご希望の時間帯にご連絡致します。その際に疑問などありましたら、お気軽にお尋ね下さい。実際に働きたいと感じた方は、ご面談を行い、ご希望や条件や働き方など決めていきます。</p>
                         </li>
-                        <li class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-0">
+                        <li class="col-12 col-md-8 offset-md-2">
                             <h2>準備・登録</h2>
                             <p>お給料をお支払いするための登録などを行います。</p>
                         </li>
-                        <li class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-0">
+                        <li class="col-12 col-md-8 offset-md-2">
                             <h2>仕事開始・サポート</h2>
                             <p>登録や準備等終わったら早速お仕事スタートです、お仕事をスタートして分からない事があったらスタッフにどんどん聞いて下さい。</p>
                         </li>

@@ -109,6 +109,9 @@ section{
     margin-bottom: 16px;
     background-color: white;
 }
+.container{
+    max-width: 100%;
+}
 
 @media screen and (min-width:767px) and ( max-width:992px) {
     html, body{
@@ -125,9 +128,6 @@ section{
     }
     small{
         font-size: 10px;
-    }
-    .container{
-        max-width: 100%;
     }
 }
 @media screen and (min-width:993px) {
@@ -154,8 +154,10 @@ section{
     section{
         padding-bottom:40px;
         padding-top:40px;
-        /* max-width: 1200px;
-        margin: 0 auto; */
+        margin: 0 auto;
+    }
+    .container{
+        max-width: 1200px;
     }
 }
 
@@ -262,6 +264,10 @@ header .humberger span:nth-child(3){
     width: 100%;
     height: auto;
 }
+img.top-tab,
+img.top-pc{
+    display: none;
+}
 
 #top-image .cap1{
     position: absolute;
@@ -337,14 +343,19 @@ header .humberger span:nth-child(3){
     font-size: 13px;
     font-weight: bold;
     background-repeat: no-repeat;
-    background-size: 24px;
-    padding-left: 28px;
+    background-size: 32px;
+    padding-left: 50px;
     line-height: 32px;
+    padding-top: 10px;
 }
 .numbers1 li::before{
-    content: "|";
-    width:4px;
-    padding-right: 4px;
+    content: "";
+    width:1px;
+    height: 16px;
+    background-color: #151515;
+    position: absolute;
+    top: 16px;
+    left: 40px;
 }
 .numbers1 li:nth-child(1){
     background-image: url(../res/number1_01.svg);
@@ -358,17 +369,48 @@ header .humberger span:nth-child(3){
 .numbers1 li:nth-child(4){
     background-image: url(../res/number1_04.svg);
 }
-@media screen and (min-width:767px) and ( max-width:992px) {
+@media screen and (min-width:767px) and (max-width:992px){
     .numbers1 li{
         font-size: 15px;
+        padding-left: 48px;
+        padding-top: 10px;
+        margin-top: 8px;
+    }
+    .numbers1 li::before{
+        left: 38px;
+    }
+    img.top-tab{
+        display: block;
+    }
+    img.top-smp,
+    img.top-pc{
+        display: none;
     }
 }
 @media screen and (min-width:993px) {
+    #top-image{
+        margin: 0 auto;
+    }
     .numbers1 li{
         font-size: 17px;
+        margin-top: 24px;
+        background-size: 32px;
+        padding-left: 48px;
+    }
+    .numbers1 li::before{
+        top: 16px;
+        left: 40px;
+        padding-top: 8px;
     }
     .mainDesc{
         padding: 32px 0;
+    }
+    img.top-pc{ 
+        display: block;
+    }
+    img.top-smp,
+    img.top-tab{
+        display: none;
     }
 }
 
@@ -527,8 +569,15 @@ header .humberger span:nth-child(3){
     margin-right: 8px;
 }
 @media screen and (min-width:767px) and ( max-width:992px) {
+    .tbl{
+        padding-left: 140px;
+    }
 }
 @media screen and (min-width:993px) {
+    .tbl{
+        padding-left: 180px;
+        padding-right: 10px;
+    }
 }
 
 /* Chat lady */
@@ -569,6 +618,19 @@ header .humberger span:nth-child(3){
 @media screen and (min-width:767px) and ( max-width:992px) {
 }
 @media screen and (min-width:993px) {
+    .chatlady_desc_wrap .blackline{
+        width: 48px;
+        bottom: -40px;
+    }
+    .chatlady_desc_wrap div{
+        padding-left: 80px;
+    }
+    .chatlady_desc_wrap div span{
+        left: 10px;
+    }
+    .chatlady_desc_wrap div h3{
+        font-size: 18px;
+    }
 }
 
 /* workstyle */
@@ -580,7 +642,6 @@ header .humberger span:nth-child(3){
     width: 100%;
     margin-top: 16px;
     margin-bottom: 16px;
-
 }
 .custome_dott::before{
     content:'';
@@ -601,9 +662,52 @@ header .humberger span:nth-child(3){
 #workstyle h3{
     padding: 8px 0;
 }
-@media screen and (min-width:767px) and ( max-width:992px) {
+#workstyle .custome_dott_wrap .dottedbox{
+    margin-top: 16px;
+    padding-top: 16px;
+}
+#workstyle .custome_dott_wrap .dottedbox::before{
+    content:'';
+    background-image: linear-gradient(to right, #000, #000 1px, transparent 1px, transparent 5px);
+    background-size: 5px 1px;
+    background-repeat: repeat-x;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+@media screen and (min-width:767px){
+    #workstyle .custome_dott_wrap{
+        margin-top: 24px;
+        margin-bottom: -32px;
+    }
+    #workstyle .custome_dott_wrap .dottedbox{
+        margin-top: 0;
+        padding-top:24px;
+        padding-bottom: 24px;
+    }
 }
 @media screen and (min-width:993px) {
+    #workstyle .custome_dott_wrap .dottedbox:nth-child(2)::after,
+    #workstyle .custome_dott_wrap .dottedbox:nth-child(3)::after{
+        content:'';
+        background-image: linear-gradient(to bottom, #000, #000 1px, transparent 1px, transparent 5px);
+        background-size: 1px 5px;
+        background-repeat: repeat-y;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .mt-16{
+        margin-top: 16px;
+        padding-top: 8px;
+    }
+    .custome_dott{
+        padding-top: 16px;
+    }
 }
 
 /* Benefit */
@@ -685,9 +789,48 @@ header .humberger span:nth-child(3){
 #office .icon-wrap img{
     margin-bottom: 8px;
 }
-@media screen and (min-width:767px) and ( max-width:992px) {
+#office .custome_dott_wrap .col-md-6{
+    margin-top: 16px;
+    padding-top: 16px;
+}
+#office .custome_dott_wrap .col-md-6::before{
+    content:'';
+    background-image: linear-gradient(to right, #000, #000 1px, transparent 1px, transparent 5px);
+    background-size: 5px 1px;
+    background-repeat: repeat-x;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+@media screen and (min-width:767px){
+    #office .custome_dott_wrap{
+        margin-top: 24px;
+        margin-bottom: -32px;
+    }
+    #office .custome_dott_wrap .col-md-6{
+        margin-top: 0;
+        padding-top:24px;
+        padding-bottom: 24px;
+    }
+    #office .custome_dott_wrap .col-md-6:nth-child(even)::after{
+        content:'';
+        background-image: linear-gradient(to bottom, #000, #000 1px, transparent 1px, transparent 5px);
+        background-size: 1px 5px;
+        background-repeat: repeat-y;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
 }
 @media screen and (min-width:993px) {
+    #office .custome_dott_wrap{
+        margin-top: 32px;
+        margin-bottom: -40px;
+    }
 }
 
 /* Q&A */
@@ -763,7 +906,7 @@ header .humberger span:nth-child(3){
 #flow .numbers1 p{
     line-height: 1.5em;
     font-weight: normal;
-    padding-left: 16px;
+    /* padding-left: 16px; */
 }
 @media screen and (min-width:767px) and ( max-width:992px) {
 }
