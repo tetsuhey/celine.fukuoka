@@ -164,7 +164,7 @@ section{
 
 /* header */
 header{
-    position: relative;
+    /* position: relative; */
     /* height: 50px;
     width: 100%;
     text-align: center; */
@@ -290,6 +290,8 @@ header .subdesc{
     border: none;
     position: relative;
     /* top: -50px; */
+    width: 100%;
+    overflow: hidden;
 }
 #top-image img.main{
     width: 100%;
@@ -1083,7 +1085,7 @@ form textarea{
     background-image: url(../res/icon-mail.svg);
 }
 #apply .errormsg{
-    /* display: none; */
+    display: none;
     font-size: 11px;
     color: white;
     padding: 8px;
