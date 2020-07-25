@@ -58,7 +58,7 @@
             var tab = (!sp && (ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0))
 
             // タブレット端末でのみ、PC向けデザインの最小幅を、viewportの最小幅に設定
-            if (tab) new ViewportExtra(1024)
+            // if (tab) new ViewportExtra(1024)
         </script>
 
         <!-- Webフォント読み込み -->
@@ -82,38 +82,73 @@
     </head>
 <body>
     <header id="header">
-        <span class="subdesc">福岡で今一番人気のプロダクション</span>
+        <!-- <span class="subdesc">福岡で今一番人気のプロダクション</span> -->
 	    <!-- <p class="text_logo">celine.</p> -->
-        <div class="humberger menu_btn">
-            <span></span><span></span><span></span>
-        </div>
-        <div class="smpMenu">
+        <div class="smpMenu d-flex">
+            <div class="humberger menu_btn">
+                <span></span><span></span>
+            </div>
+            <div class="menuwrap">
+            <!-- <p id="menu-close-btn">close</p> -->
             <ul>
-                <li data="header">TOP</li>
-                <li data="#chatlady">CAHT LADYのお仕事について</li>
-                <li data="#workstyle">WORK STYLE</li>
+                <li data="header">celine.</li>
+                <li data="#chatlady">ABOUT</li>
                 <li data="#benefit">BENEFITS</li>
-                <li data="#income">INCOME</li>
                 <li data="#office">OFFICE</li>
                 <li data="#campain">CAMPAIN</li>
                 <li data="#qa">Q&A</li>
-                <li data="#flow">FLOW</li>
                 <li data="#apply">APPLY</li>
             </ul>
+            </div>
         </div>
     </header>
 
     <section id="top-image">
-        <img class="top-smp" data="1" src="./res/top-smp.jpg" alt="main image" />
-        <img class="top-tab" src="./res/top-tab.jpg" alt="main image" />
-        <img class="top-pc" src="./res/top-pc.jpg" alt="main image" />
-        <!-- <div class="cap1">
-            <span>celine.</span><span>FUKUOKA</span>
+        <img class="top-smp main" data="1" src="./res/top-smp.jpg" alt="main image" />
+        <img class="top-tab main" src="./res/top-tab.jpg" alt="main image" />
+        <img class="top-pc main" src="./res/top-pc.jpg" alt="main image" />
+
+        <div class="logo">
+            <img src="./res/logo.svg" alt="celine. logo" />
+            <p>[セリーヌ]</p>
+            <p>福岡で一番人気のプロダクション</p>
+        </div>
+        <div class="cap1">
+            <p>celine.だけ</p>
+            <p>最低時給<br />保障!!</p>
+        </div>
+        <div class="catch">
+            <img src="./res/catch_copy.svg" alt="時代は今WEBで稼ぐ時代へ！" />
         </div>
         <div class="cap2">
-            <span>LIVE CHAT</span><br /><span>PRODUCTION</span>
-        </div> -->
-        <div class="mainDesc">
+            <span>WILL HAVE MANY BENEFITS</span>
+            <ul>
+                <li>週に１回1日４時間<br />おしゃべりするだけ！</li>
+                <li>平均時給 ¥3,200~</li>
+                <li>お仕事ノルマなし!</li>
+                <li>短期も大歓迎!</li>
+            </ul>
+        </div>
+        <div class="cap3">
+            <span>ANY OTHER BENEFITS</span>
+            <ul class="holizontal_list d-flex flex-wrap">
+                <li>フリードリンク</li>
+                <li>日払い対応</li>
+                <li>ノルマなし</li>
+                <li>シャワールーム</li>
+                <li>更衣室</li>
+                <li>化粧道具</li>
+                <li>衣装</li>
+            </ul>
+            <ul class="holizontal_list mo d-flex flex-wrap">
+                <li>ノンアダルトOK!</li>
+                <li>顔出しなしOK!</li>
+                <li>天神徒歩圏内!</li>
+                <li>専属スタイリスト!</li>
+            </ul>
+        </div>
+        
+        <!-- <div class="mainDesc">
             <div class="container">
                 <div class="row">
                     <h2 class="col-10 offset-1"><span class="bdtop"></span><span class="bdtop"></span><span class="bdtop"></span><span class="bdtop"></span>今話題のチャットワークで簡単高収入</h2>
@@ -133,7 +168,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> -->
     </section>
 
     <section id="tokuten">
@@ -596,13 +631,13 @@
             </div>
             <div class="row another-apply">
                 <div class="col-10 offset-1 col-md-4 offset-md-0 btn" data="line">
-                    <span class="line">LINEで応募する</span>
+                    <a href="https://lin.ee/4KhTqqirH" target="_blank"><span class="line">LINEで応募する</span></a>
                 </div>
                 <div class="col-10 offset-1 col-md-4 offset-md-0 btn" data="phone">
-                    <span class="phone">電話で応募する</span>
+                    <a href="#"><span class="phone">電話で応募する</span></a>
                 </div>
                 <div class="col-10 offset-1 col-md-4 offset-md-0 btn" data="mail">
-                    <span class="mail">メールで応募する</span>
+                    <a href="mailto:celinelivechat@gmail.com"><span class="mail">メールで応募する</span></a>
                 </div>
             </div>
             <div class="row">
@@ -610,12 +645,13 @@
                     <div class="form-wrap">
                         <form class="" action="./php/sendmail.php" method="post">
                             <h2>応募フォーム</h2>
-                            <div class="container">
+                            <div id="form-body" class="container">
                                 <div class="row">
                                     <div class="col-12">
                                         <small class="require">必須</small>
                                         <h3>AGE <small>*18歳未満の方の応募はできません。</small></h3>
                                         <input name="age" type="number" placeholder="20" maxlength="2" minlength="2" required="true" size="4" />
+                                        <p class="errormsg"></p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -623,6 +659,7 @@
                                         <small class="require">必須</small>
                                         <h3>NAME <small>*ニックネーム可</small></h3>
                                         <input name="name" type="text" placeholder="HANAKO" maxlength="30" minlength="0" required="true" size="30" />
+                                        <p class="errormsg"></p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -630,22 +667,26 @@
                                         <small class="require">必須</small>
                                         <h3>PHONE NUMBER</h3>
                                         <input name="phone" type="telephone" placeholder="090****1234" maxlength="12" minlength="10" required="true" size="14" />
+                                        <p class="errormsg"></p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
                                         <h3>MAIL ADRESS</h3>
                                         <input name="mail" type="email" placeholder="celine.fukuoka@celine.com" required="false" />
+                                        <p class="errormsg"></p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
                                         <h3>INQUERY</h3>
                                         <textarea name="inquery" placeholder="連絡可能な時間帯、ご質問、ご相談など" required="false" rows="5"></textarea>
+                                        <p class="errormsg"></p>
                                     </div>
                                 </div>
                                 <div class="center">
                                     <button class="btn" type="submit">送信する</button>
+                                    <p class="errormsg"></p>
                                 </div>
                             </div>
                         </form>

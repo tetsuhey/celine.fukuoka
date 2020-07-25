@@ -164,12 +164,12 @@ section{
 
 /* header */
 header{
-    height: 50px;
-    width: 100%;
     position: relative;
-    text-align: center;
+    /* height: 50px;
+    width: 100%;
+    text-align: center; */
 }
-header .text_logo{
+/* header .text_logo{
     font-family:'Gill Sans', 'Gill Sans MT', 'Montserrat', sans-serif;
     font-weight: normal;
     font-size: 27px;
@@ -184,64 +184,94 @@ header .subdesc{
     left: 0;
     right: 0;
     top: -2px;
+} */
+.smpMenu{
+    position: fixed;
+    top: 0px;
+    bottom:0;
+    right: -85vw;
+    transition: ease-in-out all .3s;
+    z-index: 999;
 }
-
-header .humberger{
-    width:40px;
-    height:40px;
+.smpMenu .humberger{
+    width:15vw;
+    height:15vw;
     position: absolute;
-    top: 5px;
-    right:5px;
+    top: 0px;
+    left:-15vw;
     text-align: center;
     transition: all .5s;
     cursor: pointer;
-    z-index: 10;
+    /* z-index: 10; */
 }
-header .humberger span{
+.smpMenu .humberger span{
     display: block;
     position: absolute;
-    left:8px;
-    width:24px;
+    width:10vw;
     height:2px;
+    left: 8px;
     border-radius: 2px;
-    background-color: #151515;
-    transition: all .5s;
+    background-color: white;
+    transition: ease all 1s;
 }
-header .humberger span:nth-child(1){
-    top: 13px;
+.smpMenu .humberger span:nth-child(1){
+    top: 18px;
+    transform: rotate(0deg);
 }
-header .humberger span:nth-child(2){
-    top: 19px;
-}
-header .humberger span:nth-child(3){
-    bottom: 13px;
-}
-.smpMenu{
-    position: fixed;
-    top: 50px;
-    bottom:0;
-    left: 100vw;
-    background-color: rgba(0,0,0,0.9);
-    transition: ease-in-out all .3s;
-    z-index: 100;
-    width: 100vw;
-    overflow-y: scroll;
-    padding-bottom: 32px;
+.smpMenu .humberger span:nth-child(2){
+    top: 24px;
+    transform: rotate(0deg);
 }
 .smpMenu.open{
-    left: 0;
+    right: 0;
+}
+.smpMenu.open .humberger{
+    background-color: rgba(255,255,255,0.95);
+}
+.smpMenu.open .humberger span{
+    background-color: #151515;
+}
+.smpMenu.open .humberger span:nth-child(1){
+    top: 22px;
+    transform: rotate(45deg);
+}
+.smpMenu.open .humberger span:nth-child(2){
+    top: 22px;
+    transform: rotate(-45deg);
+}
+.smpMenu p{
+    font-size: 1.3em;
+    text-align: left;
+    margin-top: 24px;
+    padding: 16px;
+    position: relative;
+    font-weight: bold;
+}
+.smpMenu p::before{
+    content:"×";
+    position: absolute;
+    top: 0;
 }
 .smpMenu ul{
-    margin-top: 24px;
+    padding: 16px;
+    text-align: center;
 }
 .smpMenu li{
     padding: 24px 0;
-    color: white;
-    font-size: 1.3em;
-    border-bottom: .5px solid white;
+    color: #c69c6d;
+    font-size: 1.5em;
+    border-bottom: .5px solid #151515;
+    font-weight: bold;
 }
 .smpMenu li:nth-child(1){
-    border-top: .5px solid white;
+    border-top: .5px solid #151515;
+}
+.menuwrap{
+    background-color: rgba(255,255,255,0.95);
+    /* z-index: 100; */
+    width: 85vw;
+    overflow-y: scroll;
+    padding-bottom: 32px;
 }
 @media screen and (min-width:767px) and ( max-width:992px) {
 }
@@ -259,8 +289,9 @@ header .humberger span:nth-child(3){
     padding:0;
     border: none;
     position: relative;
+    /* top: -50px; */
 }
-#top-image img{
+#top-image img.main{
     width: 100%;
     height: auto;
 }
@@ -268,43 +299,104 @@ img.top-tab,
 img.top-pc{
     display: none;
 }
-
+#top-image .logo{
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+#top-image .logo img{
+    width: 70vw;
+    margin-bottom: 8px;
+}
+#top-image .logo p{
+    color: white;
+    font-weight: bold;
+    font-size: 4.5vw;
+    padding: 2px 0;
+}
 #top-image .cap1{
+    width: 33vw;
+    height: 33vw;
+    background-color: #151515;
+    border-radius: 50%;
     position: absolute;
-    width:120px;
-    height:260px;
-    top:35vh;
-    left: 20vw;
-    border:5px solid #EBFC21;
-    padding: 4px;
+    top: 48vw;
+    left: 8px;
+    font-weight: bold;
+    text-align: center;
 }
-#top-image span{
-    font-weight: 600;
+#top-image .cap1 p:nth-child(1){
+    color: #c69c6d;
+    font-size: 4.5vw;
+    padding-top: 5vw;
+}
+#top-image .cap1 p:nth-child(2){
+    font-size: 6.5vw;
+    line-height: 9vw;
+    color: white;
+    padding-top: 0;
+}
+#top-image .catch{
     position: absolute;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    top:71.5vw;
+    left: 2vw;
+    width: 98vw;
+    transform: rotate(-15deg);
 }
-#top-image .cap1 span:nth-child(1){
-    bottom:36px;
-    font-size: 33px;
-}
-#top-image .cap1 span:nth-child(2){
-    bottom: 8px;
-    font-size: 15px;
-}
-
 #top-image .cap2{
     position: absolute;
-    top:0;
-    right:9px;
-    width:36px;
-    height:149px;
-    background-color:#EBFC21;
-    writing-mode: tb;
-    line-height: 16px;
-    font-size: 15px;
-    transform: rotate(180deg);
-    padding: 8px 4px;
+    right: 8px;
+    bottom: 3px;
 }
+#top-image .cap2 span,
+#top-image .cap3 span{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.1vw;
+    line-height: 2vw;
+    display: block;
+}
+#top-image .cap2 ul li{
+    padding: 4px;
+    background-color: #151515;
+    color: #c69c6d;
+    font-weight: bold;
+    font-size: 3.4vw;
+    line-height: 4.5vw;
+    margin-top: 3px;
+}
+#top-image .cap3{
+    position: absolute;
+    left: 8px;
+    bottom: 3px;
+    width: 54vw;
+}
+#top-image .cap3 .holizontal_list li{
+    font-weight: bold;
+    font-size: 1vw;
+    line-height: 1.3;
+    
+    letter-spacing: 0;
+}
+#top-image .cap3 .holizontal_list li::after{
+    content:"/";
+    padding: 0 2px;
+}
+#top-image .cap3 .holizontal_list li:last-child::after,
+#top-image .cap3 .holizontal_list.mo li:last-child::after{
+    content: "";
+}
+#top-image .cap3 .holizontal_list{
+    margin-top: 4px;
+}
+#top-image .cap3 .holizontal_list.mo li{
+    font-size: 3.3vw;
+}
+#top-image .cap3 .holizontal_list.mo li::after{
+    content:"|";
+    padding: 0 2px;
+}
+
+/*
 .mainDesc{
     background-color: #FCF4E8;
     padding: 16px 0;
@@ -324,7 +416,7 @@ img.top-pc{
     border-top: 1px solid #151515;
 
 }
-.mainDesc h2 span.bdtop:nth-child(1){
+ .mainDesc h2 span.bdtop:nth-child(1){
     top:6px;
 }
 .mainDesc h2 span.bdtop:nth-child(2){
@@ -335,7 +427,7 @@ img.top-pc{
 }
 .mainDesc h2 span.bdtop:nth-child(4){
     bottom:10px;
-}
+} */
 .numbers1{
     text-align: left;
 }
@@ -966,6 +1058,9 @@ form input[name="mail"],
 form textarea{
     width:100%;
 }
+#apply a{
+    color: #151515;
+}
 #apply .another-apply .btn span{
     display: block;
     position: relative;
@@ -986,6 +1081,20 @@ form textarea{
 }
 #apply .mail::before{
     background-image: url(../res/icon-mail.svg);
+}
+#apply .errormsg{
+    /* display: none; */
+    font-size: 11px;
+    color: white;
+    padding: 8px;
+    background-color: #F15A24;
+    position: absolute;
+    bottom: 8px;
+    left: 14px;
+    right: 14px;
+}
+#form-body .row{
+    position: relative;
 }
 @media screen and (min-width:767px){
     .another-apply .btn{
