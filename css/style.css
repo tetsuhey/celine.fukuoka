@@ -311,12 +311,12 @@ header{
     padding: 1vw 0;
 }
 #top-image .cap1{
-    width: 160px;
-    height: 160px;
+    width: 130px;
+    height: 130px;
     background-color: #151515;
     border-radius: 50%;
     position: absolute;
-    top: 44vw;
+    top: 46vw;
     left: 8px;
     font-weight: bold;
     text-align: center;
@@ -334,7 +334,7 @@ header{
 }
 #top-image .catch{
     position: absolute;
-    top:65.5vw;
+    top:70.5vw;
     left: 2vw;
     width: 98vw;
     transform: rotate(-15deg);
