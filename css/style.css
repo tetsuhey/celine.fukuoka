@@ -302,21 +302,21 @@ header{
 }
 #top-image .logo img{
     width: 70vw;
-    margin-bottom: 3vw;
+    margin-bottom: 2vw;
 }
 #top-image .logo p{
     color: white;
     font-weight: bold;
     font-size: 4.5vw;
-    padding: 1.5vw 0;
+    padding: 1vw 0;
 }
 #top-image .cap1{
-    width: 33vw;
-    height: 33vw;
+    width: 160px;
+    height: 160px;
     background-color: #151515;
     border-radius: 50%;
     position: absolute;
-    top: 48vw;
+    top: 44vw;
     left: 8px;
     font-weight: bold;
     text-align: center;
@@ -324,17 +324,17 @@ header{
 #top-image .cap1 p:nth-child(1){
     color: #c69c6d;
     font-size: 4.5vw;
-    padding-top: 5vw;
+    padding-top: 24px;
 }
 #top-image .cap1 p:nth-child(2){
     font-size: 6.5vw;
     line-height: 9vw;
     color: white;
-    padding-top: 2vw;
+    padding-top: 8px;
 }
 #top-image .catch{
     position: absolute;
-    top:71.5vw;
+    top:65.5vw;
     left: 2vw;
     width: 98vw;
     transform: rotate(-15deg);
