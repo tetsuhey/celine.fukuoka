@@ -681,7 +681,7 @@ header{
 }
 #tokuten .accent,
 #campain .accent{
-    color: #F15A24;
+    color: #d94008;
     font-size: 3.7vw;
     writing-mode: horizontal-tb;
     width: 1em;
@@ -1131,38 +1131,45 @@ form h2{
     text-align: center;
 }
 form small.require{
-    color:#F15A24;
+    color: #d94008;
     padding-left: 0px;
 }
-form h3{
+form label{
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 8px;
+    display: block;
+    line-height: 1;
 }
 form small{
     color:#666;
     padding-left: 8px;
 }
 form input{
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
     margin: 0;
     padding: 4px 8px;
     border: 0;
     border-bottom: 1px solid #151515;
     margin-bottom: 24px;
+    margin-top: 8px;
     font-size: 16px;
     border-radius: 0;
+    line-height: 1.35;
 }
 form input[name="age"]{
     width: 3em;
 }
 form textarea{
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
     border:1px solid #151515;
     border-radius: 0;
     text-align: left;
     padding: 4px 8px;
     font-size: 16px;
-    line-height: 1.5em;
+    line-height: 1.35;
+    margin-top: 8px;
 }
 form input[name="name"],
 form input[name="mail"],
@@ -1198,9 +1205,9 @@ form textarea{
     font-size: 11px;
     color: white;
     padding: 8px;
-    background-color: #F15A24;
+    background-color: #d94008;
     margin-top: -16px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 #form-body .row{
     position: relative;
