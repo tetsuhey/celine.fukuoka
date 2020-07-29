@@ -145,6 +145,9 @@ $(function(){
                 $("#send").next().text(data.msg);
                 $("#send").next().show();
             }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
+                console.log("XMLHttpRequest : " + XMLHttpRequest.status);
+                console.log("textStatus     : " + textStatus);
+                console.log("errorThrown    : " + errorThrown.message);
                 $("#send").next().text("送信に失敗しました。時間を置いて再度送信しても解決しない場合は、別の方法でお問い合わせください。");
                 $("#send").next().show();
             });
