@@ -134,6 +134,8 @@ $(function(){
             $.ajax({
                 type: "POST",
                 url: "./php/sendmail.php",
+                dataType: "json",
+                contentType: 'application/json; charset=utf-8',
                 data: {
                     'age' : $age.val(),
                     'name' : $name.val(),

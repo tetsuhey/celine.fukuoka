@@ -83,7 +83,7 @@ if(strlen($mail) > 0){
     $headers = "From:".mb_encode_mimeheader("celine | セリーヌ").$from;
     mb_language("ja");
     mb_internal_encoding("UTF-8");
-    mb_send_mail($to, $subject, $message, $headers)
+    mb_send_mail($to, $subject, $message, $headers);
 }
 
 ?>
