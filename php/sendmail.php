@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors',1);
+
 header("Content-type: text/plain; charset=UTF-8");
 $is_err_flg = false;
 if(isset($_SERVER['HTTP_X_REQUESTED_WITH'])
