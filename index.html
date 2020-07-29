@@ -622,7 +622,8 @@
             <div class="row">
                 <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
                     <div class="form-wrap">
-                        <form class="" action="./php/sendmail.php" method="post">
+                        <!-- <form class="" action="./php/sendmail.php" method="post"> -->
+                            <form class="" method="post">
                             <h2>応募フォーム</h2>
                             <div id="form-body" class="container">
                                 <div class="row">
@@ -637,7 +638,7 @@
                                     <div class="col-12">
                                         <small class="require">必須</small>
                                         <h3>NAME <small>*ニックネーム可</small></h3>
-                                        <input name="name" type="text" placeholder="HANAKO" maxlength="30" minlength="0" required="true" size="30" />
+                                        <input name="name" type="text" placeholder="HANAKO" maxlength="100" minlength="0" required="true" size="30" />
                                         <p class="errormsg"></p>
                                     </div>
                                 </div>
@@ -645,27 +646,27 @@
                                     <div class="col-12">
                                         <small class="require">必須</small>
                                         <h3>PHONE NUMBER</h3>
-                                        <input name="phone" type="telephone" placeholder="090****1234" maxlength="12" minlength="10" required="true" size="14" />
+                                        <input name="phone" type="telephone" placeholder="090****1234" maxlength="30" minlength="10" required="true" size="14" />
                                         <p class="errormsg"></p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
                                         <h3>MAIL ADRESS</h3>
-                                        <input name="mail" type="email" placeholder="celine.fukuoka@celine.com" required="false" />
+                                        <input name="mail" type="email" placeholder="celine.fukuoka@celine.com" />
                                         <p class="errormsg"></p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
                                         <h3>INQUERY</h3>
-                                        <textarea name="inquery" placeholder="連絡可能な時間帯、ご質問、ご相談など" required="false" rows="5"></textarea>
+                                        <textarea name="inquery" placeholder="連絡可能な時間帯、ご質問、ご相談など" rows="5"></textarea>
                                         <p class="errormsg"></p>
                                     </div>
                                 </div>
                                 <div class="center">
-                                    <button class="btn" type="submit">送信する</button>
-                                    <p class="errormsg"></p>
+                                    <button id="send" class="btn" type="submit">送信する</button>
+                                    <p class="errormsg" style="margin-top:16px;"></p>
                                 </div>
                             </div>
                         </form>

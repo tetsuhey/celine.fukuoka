@@ -1199,10 +1199,8 @@ form textarea{
     color: white;
     padding: 8px;
     background-color: #F15A24;
-    position: absolute;
-    bottom: 8px;
-    left: 14px;
-    right: 14px;
+    margin-top: -16px;
+    margin-bottom: 8px;
 }
 #form-body .row{
     position: relative;
