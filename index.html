@@ -24,14 +24,6 @@
         <!-- web-font -->
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap" rel="stylesheet">
 
-
-        <!-- js -->
-        <script type="text/javascript" src="./js/jquery.min.js"></script>
-        <script type="text/javascript" src="./js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="./js/controller.js"></script>
-
-        <script src="https://cdn.jsdelivr.net/npm/viewport-extra@1.0.3/dist/viewport-extra.min.js"></script>
-
         <!-- Open Graph Tags -->
         <meta property="og:type" content="website">
         <meta property="og:title" content="celine. (セリーヌ) | 福岡で今一番人気のプロダクション">
@@ -45,14 +37,6 @@
         <meta name="twitter:text:title" content="celine. (セリーヌ) | 福岡で今一番人気のプロダクション">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:description" content="最低時給1200円を保障！今だけ入店祝い金5万円を支給！はceline.だけ。福岡でチャットレディを始めるなら安心で手厚い保障のceline.がおすすめ！！">
-        
-        <script>
-            var ua = navigator.userAgent
-
-            // タブレット端末かどうか
-            var sp = (ua.indexOf('iPhone') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0)
-            var tab = (!sp && (ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0))
-        </script>
 
     </head>
 <body>
@@ -582,7 +566,7 @@
             </div>
             <div class="row another-apply">
                 <div class="col-10 offset-1 col-md-4 offset-md-0 btn" data="line">
-                    <a href="https://lin.ee/4KhTqqirH" target="_blank"><span class="line">LINEで応募する</span></a>
+                    <a href="https://lin.ee/4KhTqqirH" target="_blank" rel=”noopener”><span class="line">LINEで応募する</span></a>
                 </div>
                 <div class="col-10 offset-1 col-md-4 offset-md-0 btn" data="phone">
                     <a href="#"><span class="phone">電話で応募する</span></a>
@@ -653,6 +637,20 @@
         <p class="logo">celine.</p>
 	    <div id="copyright">&copy;2020 celine.</div><!-- copyright -->
     </footer>
+
+    <!-- js -->
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/controller.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/viewport-extra@1.0.3/dist/viewport-extra.min.js"></script>
+    <script>
+        var ua = navigator.userAgent
+
+        // タブレット端末かどうか
+        var sp = (ua.indexOf('iPhone') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0)
+        var tab = (!sp && (ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0))
+    </script>
 
 </body>
 </html>
