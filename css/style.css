@@ -163,12 +163,6 @@ section{
 
 
 /* header */
-header{
-    /* position: relative; */
-    /* height: 50px;
-    width: 100%;
-    text-align: center; */
-}
 .smpMenu{
     position: fixed;
     top: 0px;
@@ -837,8 +831,6 @@ header{
 }
 
 /* workstyle */
-#workstyle .dottedbox{
-}
 .custome_dott{
     position: relative;
     height: 1px;
