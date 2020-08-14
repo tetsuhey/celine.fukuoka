@@ -754,10 +754,27 @@ section{
     margin-left: -6px;
 }
 #dear h1{
-    margin: 16px 0;
+    margin: 24px 0 32px;
+}
+#dear h1 span::before,
+#dear h1 span::after{
+    content: '|';
+    position: absolute;
+    font-weight: normal;
+}
+#dear h1 span::before{
+    left:0px;
+    transform: rotate(-30deg);
+}
+#dear h1 span::after{
+    right: 0px;
+    transform: rotate(30deg);
 }
 #dear h1 span{
-    border-bottom: 1px solid #151515;
+    /* border-bottom: 2px solid #151515; */
+    padding: 0 24px;
+    position: relative;
+    font-size: 1.3em;
 }
 #dear li{
     margin-top: 8px;
@@ -809,8 +826,9 @@ section{
 .chatlady_desc_wrap div h3{
     font-size: 16px;
     display: inline-block;
-    border-bottom:1px solid #151515;
+    border-bottom:2px solid #F15A24;
     margin-bottom: 16px;
+    color:#F15A24;
 }
 @media screen and (min-width:767px) and ( max-width:992px) {
 }
@@ -936,19 +954,32 @@ section{
     left: 50%;
     top: 50%;
     margin-left: -8px;
+    margin-top: -8px;
     line-height: 24px;
     text-align: center;
 }
-.bene-img-wrap h2{
-    margin-top: -8px;
+.bene-img-wrap h2::before,
+.bene-img-wrap h2::after{
+    
+    position: absolute;
+    top: -4px;
+    width: 24px;
+    height: 8px;
 }
 .bene-img-wrap h2::before{
-    content:"";
+    content:"\201c";
+    left: -20px;
+}
+.bene-img-wrap h2::after{
+    content:"\201d";
+    right:-20px;
+}
+.bene-img-wrap .stars{
     position: absolute;
     left: 50%;
     width:24px;
     height: 8px;
-    margin-top: -16px;
+    margin-top: -12px;
     margin-left: -16px;
     background-image: url(../res/stars.svg);
     background-repeat: no-repeat;
@@ -958,6 +989,22 @@ section{
 @media screen and (min-width:993px) {
     .msg{
         margin-top: 74px;
+    }
+    .bene-img-wrap h2{
+        font-size: 20px;
+        line-height: 1.7;
+        letter-spacing: 1.6px;
+        top: 44%;
+    }
+    .bene-img-wrap .stars{
+        width: 36px;
+        height: 16px;
+        background-size: contain;
+        margin-top: -20px;
+        margin-left: -18px;
+    }
+    .bene-img-wrap img{
+        left: 40%;
     }
 }
 
@@ -998,6 +1045,14 @@ section{
     bottom: 0;
     left: 0;
     right: 0;
+}
+.office-imgs{
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: 24px;
+}
+.office-imgs div img{
+    width: 100%;
 }
 @media screen and (min-width:767px){
     #office .custome_dott_wrap{
