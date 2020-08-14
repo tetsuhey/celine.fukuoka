@@ -1050,7 +1050,7 @@ section{
     margin-right: -15px;
     margin-left: -15px;
     margin-top: 24px;
-    width: 100%;
+    /* width: 100%; */
 }
 .office-imgs div img{
     width: 100%;
