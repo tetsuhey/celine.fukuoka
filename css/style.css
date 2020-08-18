@@ -926,6 +926,12 @@ section{
 #dear li{
     margin-top: 8px;
 }
+#dear li.imgswrap{
+    margin-left: -16px;
+    margin-right: -16px;
+    margin-top:-16px;
+    margin-bottom:16px;
+}
 #dear li img{
     margin-right: 8px;
 }
@@ -933,11 +939,18 @@ section{
     .tbl{
         padding-left: 140px;
     }
+    #dear li.imgswrap{
+        margin-left: -140px;
+    }
 }
 @media screen and (min-width:993px) {
     .tbl{
         padding-left: 180px;
         padding-right: 10px;
+    }
+    #dear li.imgswrap{
+        margin-left: -180px;
+        margin-right: -10px;
     }
 }
 
@@ -976,6 +989,9 @@ section{
     border-bottom:2px solid #F15A24;
     margin-bottom: 16px;
     color:#F15A24;
+}
+.office-imgs img{
+    width: 100%;
 }
 @media screen and (min-width:767px) and ( max-width:992px) {
 }
@@ -1189,14 +1205,11 @@ section{
     left: 0;
     right: 0;
 }
-.office-imgs{
+#office .office-imgs{
     margin-right: -15px;
     margin-left: -15px;
     margin-top: 24px;
-    /* width: 100%; */
-}
-.office-imgs div img{
-    width: 100%;
+    margin-bottom: -16px;
 }
 @media screen and (min-width:767px){
     #office .custome_dott_wrap{
@@ -1224,6 +1237,9 @@ section{
     #office .custome_dott_wrap{
         margin-top: 32px;
         margin-bottom: -40px;
+    }
+    #office .office-imgs{
+        margin-bottom: -32px;
     }
 }
 
