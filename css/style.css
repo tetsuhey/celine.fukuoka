@@ -923,6 +923,15 @@ section{
     }
 }
 
+/* INCOME */
+#income .bk-black{
+    margin-top: 32px;
+}
+#income li{
+    margin-top: 8px;
+    font-size: 1.1em;
+}
+
 /* Benefit */
 .bene-img-wrap{
     position: relative;
@@ -1006,19 +1015,6 @@ section{
     .bene-img-wrap img{
         left: 40%;
     }
-}
-
-/* INCOME */
-#income .bk-black{
-    margin-top: 32px;
-}
-#income li{
-    margin-top: 8px;
-    font-size: 1.1em;
-}
-@media screen and (min-width:767px) and ( max-width:992px) {
-}
-@media screen and (min-width:993px) {
 }
 
 /* OFFICE */
@@ -1158,6 +1154,22 @@ section{
     line-height: 1.5em;
     font-weight: normal;
     /* padding-left: 16px; */
+}
+.cms-video img{
+    width: 100%;
+    /* max-width: 800px;
+    margin: 0 auto; */
+    position: relative;
+}
+#flow .cms-video .txt{
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+
 }
 @media screen and (min-width:767px) and ( max-width:992px) {
 }
