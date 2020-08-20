@@ -134,8 +134,6 @@ $(function(){
             $.ajax({
                 type: "POST",
                 url: "./php/sendmail.php",
-                dataType: "json",
-                contentType: 'application/json; charset=utf-8',
                 data: {
                     'age' : $age.val(),
                     'name' : $name.val(),
@@ -143,9 +141,12 @@ $(function(){
                     'mail' : $mail.val(),
                     'inquery' : $inquery.val()
                 }
-            }).done(function(data, dataType) {
-                $("#send").next().text(data.msg);
-                $("#send").next().show();
+            }).done(function(response, textStatus, xhr) {
+                $age.val('');
+                $name.val('');
+                $phone.val('');
+                $mail.val('');
+                alert('ご応募ありがとうございます。送信されました。');
             }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
                 console.log("XMLHttpRequest : " + XMLHttpRequest.status);
                 console.log("textStatus     : " + textStatus);
@@ -189,5 +190,9 @@ $(function(){
             return true;
         }
         return false;
+    }
+
+    function send_email(){
+
     }
 });
