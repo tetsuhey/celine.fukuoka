@@ -7,22 +7,17 @@ html, body{
     letter-spacing: .03em;
     width:100%;
 }
-h1{
-    font-family: 'Montserrat', sans-serif;
+h1,h2{
     font-weight: 600;
     letter-spacing: .1em;
     font-size:16px;
     text-align: center;
 }
-h1 span.full_bd{
+span.full_bd{
     border-bottom: 1px solid #151515;
 }
-h2{
-    font-size:16px;
-    font-weight: bold;
-}
-h3{
-    font-size:14px;
+h3,h4{
+    font-size:15px;
     font-weight: bold;
 }
 small{
@@ -117,14 +112,11 @@ section{
     html, body{
         font-size:14px;
     }
-    h1{
+    h1,h2{
         font-size: 16px;
     }
-    h2{
+    h3,h4{
         font-size: 15px;
-    }
-    h3{
-        font-size: 14px;
     }
     small{
         font-size: 10px;
@@ -135,14 +127,11 @@ section{
         font-size:16px;
         width: 100%;
     }
-    h1{
+    h1,h2{
         font-size: 18px;
     }
-    h2{
+    h3,h4{
         font-size: 17px;
-    }
-    h3{
-        font-size: 16px;
     }
     small{
         font-size: 11px;
@@ -291,16 +280,18 @@ section{
     position: absolute;
     top: 8px;
     left: 8px;
+    text-align: left;
 }
 #top-image .logo img{
     width: 70vw;
     margin-bottom: 2vw;
 }
-#top-image .logo p{
+#top-image .logo span{
     color: white;
     font-weight: bold;
     font-size: 4.5vw;
     padding: 1vw 0;
+    display: block;
 }
 #top-image .cap1{
     width: 30vw;
@@ -434,7 +425,7 @@ section{
         width: 40vw;
         margin-bottom: 16px;
     }
-    #top-image .logo p{
+    #top-image .logo span{
         font-size: 2.5vw;
         padding: 4px 0;
     }
@@ -499,7 +490,7 @@ section{
         width: 35vw;
         margin-bottom: 16px;
     }
-    #top-image .logo p{
+    #top-image .logo span{
         font-size: 2.3vw;
         padding: 4px 0;
     }
@@ -567,7 +558,7 @@ section{
         width: 400px;
         margin-bottom: 24px;
     }
-    #top-image .logo p{
+    #top-image .logo span{
         font-size: 24px;
         padding: 4px 0;
     }
@@ -628,30 +619,35 @@ section{
 #tokuten{
     border-top:none;
 }
-#tokuten h1{
+#tokuten h2{
     padding-bottom:24px;
+    text-align: center;
+    letter-spacing: .1em;;
 }
-#tokuten h2,
-#campain h2{
+#tokuten h4,
+#campain h3 .tag{
     position: relative;
     text-align: center;
     margin-bottom: 8px;
+    font-size: 16px;
+    display: block;
+    font-weight: bold;
 }
-#tokuten h2::before,
-#tokuten h2::after,
-#campain h2::before,
-#campain h2::after{
+#tokuten h4::before,
+#tokuten h4::after,
+#campain h3 .tag::before,
+#campain h3 .tag::after{
     content: "|";
     display: inline-block;
     position: absolute;
 }
-#tokuten h2::before,
-#campain h2::before{
+#tokuten h4::before,
+#campain h3 .tag::before{
     transform: rotate(-30deg);
     left:24px;
 }
-#tokuten h2::after,
-#campain h2::after{
+#tokuten h4::after,
+#campain h3 .tag::after{
     transform: rotate(30deg);
     right: 24px;
 }
@@ -665,9 +661,9 @@ section{
     font-weight: bold;
     line-height: 1em;
 }
-#tokuten img,
+#tokuten h3,
 #campain img{
-    width: 39%;
+    width: 40%;
 }
 #tokuten .inner,
 #campain .inner{
@@ -765,24 +761,25 @@ section{
     left:50%;
     margin-left: -6px;
 }
-#dear h1{
+#dear h2{
     margin: 24px 0 32px;
+    text-align: center;
 }
-#dear h1 span::before,
-#dear h1 span::after{
+#dear h2 span::before,
+#dear h2 span::after{
     content: '|';
     position: absolute;
     font-weight: normal;
 }
-#dear h1 span::before{
+#dear h2 span::before{
     left:0px;
     transform: rotate(-30deg);
 }
-#dear h1 span::after{
+#dear h2 span::after{
     right: 0px;
     transform: rotate(30deg);
 }
-#dear h1 span{
+#dear h2 span{
     padding: 0 24px;
     position: relative;
     font-size: 1.3em;
@@ -819,7 +816,14 @@ section{
 }
 
 /* Chat lady */
-#chatlady h2 img{
+h2.en_title{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: .15em;
+    font-size: 1.5em;
+}
+#chatlady h3 img{
     width:100%;
     height: auto;
     border:2px solid #151515;
@@ -843,16 +847,17 @@ section{
 .chatlady_desc_wrap div span{
     position: absolute;
     left: .25em;
-    font-size: 1em;
+    font-size: 1.1em;
     color: white;
     font-weight: 600;
 }
-.chatlady_desc_wrap div h3{
+.chatlady_desc_wrap div h4{
     font-size: 16px;
     display: inline-block;
     border-bottom:2px solid #F15A24;
     margin-bottom: 16px;
     color:#F15A24;
+    font-weight: 600;
 }
 .office-imgs img{
     width: 100%;
@@ -870,7 +875,7 @@ section{
     .chatlady_desc_wrap div span{
         left: 10px;
     }
-    .chatlady_desc_wrap div h3{
+    .chatlady_desc_wrap div h4{
         font-size: 18px;
     }
 }
@@ -894,13 +899,18 @@ section{
     left: 0;
     right: 0;
 }
-#workstyle h2{
+#workstyle h3{
     display: inline-block;
     margin: 16px 0;
     border-bottom:1px solid #151515;
+    padding: 8px 0 0;
+    font-size: 16px;
 }
-#workstyle h3{
-    padding: 8px 0;
+#workstyle h4{
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    
 }
 #workstyle .custome_dott_wrap .dottedbox{
     margin-top: 16px;
@@ -985,7 +995,7 @@ section{
     margin-left: -125px;
     z-index: 1;
 }
-.bene-img-wrap h2{
+.bene-img-wrap h3{
     position: absolute;
     left: 50%;
     top: 50%;
@@ -993,20 +1003,21 @@ section{
     margin-top: -8px;
     line-height: 24px;
     text-align: center;
+    font-size: 1.3em;
 }
-.bene-img-wrap h2::before,
-.bene-img-wrap h2::after{
+.bene-img-wrap h3::before,
+.bene-img-wrap h3::after{
     
     position: absolute;
     top: -4px;
     width: 24px;
     height: 8px;
 }
-.bene-img-wrap h2::before{
+.bene-img-wrap h3::before{
     content:"\201c";
     left: -20px;
 }
-.bene-img-wrap h2::after{
+.bene-img-wrap h3::after{
     content:"\201d";
     right:-20px;
 }
@@ -1019,6 +1030,7 @@ section{
     margin-left: -16px;
     background-image: url(../res/stars.svg);
     background-repeat: no-repeat;
+    display: block;
 }
 @media screen and (min-width:767px) and ( max-width:992px) {
 }
@@ -1026,7 +1038,7 @@ section{
     .msg{
         margin-top: 74px;
     }
-    .bene-img-wrap h2{
+    .bene-img-wrap h3{
         font-size: 20px;
         line-height: 1.7;
         letter-spacing: 1.6px;
@@ -1050,6 +1062,11 @@ section{
     padding-left: 0;
     padding-right: 0;
     font-weight: bold;
+    font-size: 1em;
+}
+#office .icon-wrap span{
+    display: block;
+    padding: 8px 0 0;
 }
 #office .icon-wrap img{
     margin-bottom: 8px;
@@ -1077,7 +1094,7 @@ section{
 }
 @media screen and (min-width:767px){
     #office .custome_dott_wrap{
-        margin-top: 24px;
+        margin-top: 16px;
         margin-bottom: -32px;
     }
     #office .custome_dott_wrap .col-md-6{
@@ -1170,9 +1187,10 @@ section{
     /* margin-right: 16px; */
     margin-top: 8px;
 }
-#flow .numbers1 h2{
+#flow .numbers1 h3{
     display: inline-block;
-    margin-top: 6px;
+    /* margin-top: 6px; */
+    font-size: 1.3em;
 }
 #flow .numbers1 li{
     margin-top: 24px;
@@ -1211,9 +1229,10 @@ form{
     padding: 16px;
     border: 1px solid #C7B299;
 }
-form h2{
+form h3{
     margin-bottom: 24px;
     text-align: center;
+    font-size:1.2em;
 }
 form small.require{
     color: #d94008;
