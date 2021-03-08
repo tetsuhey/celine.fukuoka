@@ -15,15 +15,28 @@ $(function(){
     });
     $(".smpMenu li").on("click", function(){
         var _attr = $(this).attr("data");
-        var scroll_top = $(_attr).offset().top - 10;
-        $("html,body").animate({scrollTop:scroll_top},600);
+        var _goHome = $(this).attr("goHome");
+
+        if(_goHome == "true"){
+            if(_attr == "header"){
+                window.location.href="https://chat-fukuoka.com/";
+            }else if(_attr == "#apply"){
+                window.location.href="https://chat-fukuoka.com/contact/";
+            }else{
+                window.location.href="https://chat-fukuoka.com/"+_attr;
+            }
+        }else{
+            var scroll_top = $(_attr).offset().top - 10;
+            $("html,body").animate({scrollTop:scroll_top},600);
+        }
 
         $(".menu_btn").removeClass('open');
         $(".smpMenu").removeClass('open')
     });
     $("#apply_btn, #contact_btn").on("click", function(){
-        var pos = $("#apply").offset().top -10;
-        $("html,body").animate({scrollTop:pos},600);
+        // var pos = $("#apply").offset().top -10;
+        // $("html,body").animate({scrollTop:pos},600);
+        window.location.href="https://chat-fukuoka.com/contact/";
     });
     $("a span.phone").on("click",function(){
         if(!sp){
