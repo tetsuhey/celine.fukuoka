@@ -19,11 +19,11 @@ $(function(){
 
         if(_goHome == "true"){
             if(_attr == "header"){
-                window.location.href="https://chat-fukuoka.com/";
+                window.location.href="../";
             }else if(_attr == "#apply"){
-                window.location.href="https://chat-fukuoka.com/contact/";
+                window.location.href="./contact/";
             }else{
-                window.location.href="https://chat-fukuoka.com/"+_attr;
+                window.location.href="../"+_attr;
             }
         }else{
             var scroll_top = $(_attr).offset().top - 10;
@@ -36,7 +36,7 @@ $(function(){
     $("#apply_btn, #contact_btn").on("click", function(){
         // var pos = $("#apply").offset().top -10;
         // $("html,body").animate({scrollTop:pos},600);
-        window.location.href="https://chat-fukuoka.com/contact/";
+        window.location.href="./contact/";
     });
     $("a span.phone").on("click",function(){
         if(!sp){
