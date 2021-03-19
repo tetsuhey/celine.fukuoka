@@ -38,6 +38,9 @@ section{
     max-width: 1400px;
     margin:0 auto;
 }
+video{
+    width: 100%;
+}
 .arrow{
     display: inline-block;
     transform:rotate(90deg);
@@ -757,6 +760,14 @@ section{
     width: 1em;
     line-height: 1.2em;
 }
+.cheerup{
+    margin-top: 24px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+.cheerup span{
+    border-bottom: 2px solid;
+}
 .bdd{
     border-bottom:6px double #151515;
 }
@@ -904,19 +915,20 @@ h2.en_title{
     position: absolute;
     top: 0;
     bottom: -32px;
-    width: 36px;
+    width: 0;
     background-color: #151515;
 }
 .chatlady_desc_wrap div{
-    padding-left: 48px;
+    padding-left: 0px;
     padding-top: 24px;
     position: relative;
 }
 .chatlady_desc_wrap div span{
     position: absolute;
-    left: .25em;
-    font-size: 13px;
-    color: white;
+    left: 0;
+    font-size: 1rem;
+    letter-spacing: -1px;
+    color: #333;
     font-weight: 600;
 }
 .chatlady_desc_wrap div h4{
@@ -926,6 +938,38 @@ h2.en_title{
     margin-bottom: 16px;
     color:#F15A24;
     font-weight: 600;
+    margin-left: 0;
+    letter-spacing: -0.5px;
+}
+.chatlady_desc_wrap div h4 strong{
+    display: block;
+}
+.chatlady_desc_wrap .arrow{
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    border-color: #F15A24;
+    color: transparent;
+    top: 4px;
+    left: unset;
+    margin-left: 8px;
+    position: relative;
+    transform: rotate(45deg);
+}
+.chatlady_desc_wrap .arrow.open{
+    transform: rotate(135deg);
+}
+.chatlady_desc_wrap p{
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    max-height: 0;
+    overflow: hidden;
+}
+.chatlady_desc_wrap p.open{
+    max-height: 300px;
 }
 #chatlady .office-imgs img{
     width: 100%;
@@ -956,6 +1000,12 @@ h2.en_title{
     left:calc(50% - 8.2rem);
     font-size: 1rem;
 }
+@media screen and (min-width:576px){
+    .chatlady_desc_wrap div h4 strong{
+        display: inline-block;
+        margin-right: 16px;
+    }
+}
 @media screen and (min-width:767px){
     #chatlady .office-imgs img{
         width: 50%;
@@ -966,24 +1016,32 @@ h2.en_title{
     #chatlady .office-imgs img:nth-child(2){
         padding-left: 8px;
     }
+    .chatlady_desc_wrap p{
+        max-height: 300px;
+    }
 }
 @media screen and (min-width:993px) {
     .chatlady_desc_wrap .blackline{
         width: 60px;
         bottom: -40px;
+        max-height: unset;
     }
     .chatlady_desc_wrap div{
         padding-left: 80px;
     }
     .chatlady_desc_wrap div span{
-        left: 0px;
+        left: 6px;
         padding: 10px 0 0;
-        top: 10px;
+        top: 16px;
         font-size: 1.7rem;
         border-top: 2px solid white;
+        color: white;
     }
     .chatlady_desc_wrap div span:nth-child(1){
         border-top: none;
+    }
+    .chatlady_desc_wrap p{
+        max-height: 500px;
     }
 }
 
@@ -1065,6 +1123,9 @@ h2.en_title{
 #workstyle .custome_dott_wrap .dottedbox:nth-child(2){
     border-top: 1px dotted #333;
     border-bottom: 1px dotted #333;
+}
+#workstyle img.eyecatch{
+    width: 100%;
 }
 @media (min-width: 576px) {
     #workstyle .custome_dott_wrap .cap{
@@ -1172,20 +1233,50 @@ h2.en_title{
     height: 30px;
     bottom: -30px;
 }
+.bene-img-wrap .arrow{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f7f3ed;
+    bottom: -40px;
+    right: 8px;
+    box-shadow: 0 0 8px #bbb;
+    padding: 0;
+    text-align: center;
+    transform: rotate(0deg);
+    z-index: 1;
+}
+.bene-img-wrap .arrow span{
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    border-color: #333;
+    display: inline-block;
+    margin-top: 19px;
+    color: transparent;
+    transform: rotate(45deg);
+}
+.bene-img-wrap .arrow.open span{
+    transform: rotate(135deg);
+}
 .bene-img-wrap img{
     position: absolute;
     width:100px;
     height: auto;
     top: -50px;
-    left: 50%;
-    margin-left: -125px;
+    left: 0;
+    margin-left: 0;
     z-index: 1;
 }
 .bene-img-wrap h3{
     position: absolute;
-    left: 50%;
+    left: calc(50% - 58px);
     top: 50%;
-    margin-left: -8px;
+    margin-left: 0;
     margin-top: -8px;
     line-height: 24px;
     text-align: center;
@@ -1218,7 +1309,22 @@ h2.en_title{
     background-repeat: no-repeat;
     display: block;
 }
-@media screen and (min-width:767px) and ( max-width:992px) {
+#benefit .msg{
+    max-height: 0px;
+    overflow: hidden;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+#benefit .msg.open{
+    max-height: 450px;
+}
+@media screen and (min-width:767px) {
+    .bene-img-wrap img{
+        left: calc(50% - 230px);
+    }
+    #benefit .msg{
+        max-height: unset;
+    }
 }
 @media screen and (min-width:993px) {
     .msg{
@@ -1238,7 +1344,7 @@ h2.en_title{
         margin-left: -18px;
     }
     .bene-img-wrap img{
-        left: 40%;
+        left: 0;
     }
 }
 
@@ -1537,8 +1643,14 @@ footer h2{
     font-size: 1rem;
 }
 footer .logo{
-    font-size: 32;
+    font-size: 32px;
     margin: 16px 0;
+}
+footer small{
+    font-size: .7rem;
+    font-weight: normal;
+    margin: 16px 0;
+    color: #555;
 }
 @media screen and (min-width:767px) and ( max-width:992px) {
 }

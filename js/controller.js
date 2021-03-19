@@ -13,6 +13,20 @@ $(function(){
         $(".menu_btn").removeClass('open');
         $(".smpMenu").removeClass('open')
     });
+    $(".chatlady_desc_wrap h4").on("click", function(){
+        $(this).next().toggleClass('open');
+        $(this).find('.arrow').toggleClass('open');
+    });
+    $("#benefit .arrow").on('click', function(){
+        $(this).toggleClass('open');
+        data = $(this).attr('data');
+        $('#benefit').find('p.msg').each(function(i, elem){
+            var target = $(elem).attr('data');
+            if(target == data){
+                $(elem).toggleClass('open');
+            }
+        });
+    });
     $(".smpMenu li").on("click", function(){
         var _attr = $(this).attr("data");
         var _goHome = $(this).attr("goHome");
