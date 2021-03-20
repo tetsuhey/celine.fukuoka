@@ -41,6 +41,13 @@ section{
 video{
     width: 100%;
 }
+a{
+    text-decoration: none;
+    color: #151515;
+}
+a:hover{
+    color: #151515;
+}
 .arrow{
     display: inline-block;
     transform:rotate(90deg);
@@ -175,71 +182,18 @@ video{
 .smpMenu{
     position: fixed;
     width: 100%;
+    height: 0;
     top: 0px;
-    bottom:0;
+    left:0;
     right: -100%;
-    transition: ease-in-out all .3s;
+    -webkit-transition: height .3s;
+    transition: height .3s;
     z-index: 999;
 }
-.smpMenu .humberger{
-    width:60px;
-    height:60px;
-    position: absolute;
-    top: 0px;
-    left:-60px;
-    text-align: center;
-    transition: all .5s;
-    cursor: pointer;
-    background-color: rgba(255,255,255,.9);
-    /* z-index: 10; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    box-shadow: 0 0 8px #c69c6d;
-}
-.smpMenu .humberger span{
-    display: block;
-    /* position: absolute; */
-    width:50px;
-    height:2px;
-    /* left: 8px; */
-    border-radius: 2px;
-    background-color: #333;
-    transition: ease all 1s;
-    margin: 2px 0;
-
-}
-.smpMenu .humberger span:nth-child(1){
-    /* top: 18px; */
-    transform: rotate(0deg);
-}
-.smpMenu .humberger span:nth-child(2){
-    /* top: 24px; */
-    transform: rotate(0deg);
-}
 .smpMenu.open{
-    right: -60px;
+    height: calc(100% - 60px);
 }
-.smpMenu.open .humberger{
-    background-color: rgba(255,255,255,0.95);
-}
-.smpMenu.open .humberger span{
-    background-color: #151515;
-}
-.smpMenu.open .humberger span:nth-child(1){
-    /* top: 22px; */
-    margin: 0;
-    margin-bottom: -1px;
-    transform: rotate(45deg);
-}
-.smpMenu.open .humberger span:nth-child(2){
-    /* top: 22px; */
-    margin: 0;
-    margin-top: -1px;
-    transform: rotate(-45deg);
-}
-.smpMenu p{
+/* .smpMenu p{
     font-size: 1.3em;
     text-align: left;
     margin-top: 24px;
@@ -251,33 +205,94 @@ video{
     content:"×";
     position: absolute;
     top: 0;
-}
-.smpMenu ul{
+} */
+.smpMenu .menuwrap ul{
     padding: 16px;
     text-align: center;
 }
-.smpMenu li{
-    padding: 24px 0;
+.smpMenu .menuwrap li{
+    padding: 8px 0;
     color: #c69c6d;
-    font-size: 1.5em;
+    font-size: 1.2em;
     border-bottom: 2px solid #151515;
     font-weight: bold;
 }
-.smpMenu li:nth-child(1){
+.smpMenu .menuwrap li:nth-child(1){
     border-top: 2px solid #151515;
 }
 .menuwrap{
     background-color: rgba(255,255,255,0.95);
     /* width: 85vw; */
-    width: calc(100% - 60px);
+    /* width: calc(100% - 60px); */
+    width: 100%;
     overflow-y: scroll;
-    padding-bottom: 32px;
+    /* padding-bottom: 32px; */
+}
+.smpfixed{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.95);
+    box-shadow: 0 0 8px #c69c6d;
+}
+.smpfixed ul{
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 10px;
+}
+.smpfixed ul li small{
+    font-size: 0.5rem;
+}
+.smpfixed ul li{
+    text-align: center;
+    font-size: .8rem;
+    width: calc(100% / 3);
+}
+.smpfixed ul li:nth-child(2){
+    border-left: 1px solid;
+    border-right: 1px solid;
+}
+.smpfixed ul li.menu{
+    position: relative;
+    padding-top: 10px;
+}
+.smpfixed li.menu span{
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    left: calc(50% - 15px);
+    border-radius: 2px;
+    background-color: #333;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    transform: rotate(0deg);
+}
+.smpfixed li.menu.open span{
+    width: 20px;
+    left: calc(50% - 10px);
+}
+.smpfixed li.menu span:nth-child(1){
+    top: 6px;
+}
+.smpfixed li.menu span:nth-child(2){
+    top: 10px;
+}
+.smpfixed li.menu.open span:nth-child(1){
+    top: 6px;
+    transform: rotate(45deg);
+}
+.smpfixed li.menu.open span:nth-child(2){
+    top: 6px;
+    transform: rotate(-45deg);
 }
 @media screen and (min-width:767px) and ( max-width:992px) {
-    .smpMenu {
+    /* .smpMenu {
         width: 80vw;
         right: -80vw;
-    }
+    } */
 }
 @media screen and (min-width:993px) {
     header .humberger{
@@ -288,12 +303,13 @@ video{
         width: 100%;
         height: auto;
         right: 0;
-        top: initial;
+        top: 0;
+        bottom: unset;
         visibility: visible;
         box-shadow: 0 0 4px #c69c6d;
         background-color: rgba(255,255,255,.9);
     }
-    .menuwrap{
+    .smpMenu .menuwrap{
         width: 100%;
         padding: 0;
         overflow-y: unset;
@@ -301,14 +317,14 @@ video{
         margin: 0 auto;
         background-color: unset;
     }
-    .menuwrap ul{
+    .smpMenu .menuwrap ul{
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         padding: 8px 0;
     }
-    .menuwrap ul li{
+    .smpMenu .menuwrap ul li{
         height: 100%;
         padding: 0 16px;
         border: none;
@@ -320,14 +336,14 @@ video{
         transition: all .3s;
         color: #333;
     }
-    .menuwrap ul li:hover{
+    .smpMenu .menuwrap ul li:hover{
         color: #c69c6d;
     }
-    .smpMenu li:nth-child(1) {
+    .smpMenu .menuwrap li:nth-child(1){
         border-top:none;
         border-left: none;
     }
-    .menuwrap ul li small{
+    .smpMenu .menuwrap ul li small{
         display: inline-block;
         /* margin-bottom: 4px; */
         line-height: 11px;
@@ -553,6 +569,9 @@ video{
     }
 }
 @media screen and (min-width:993px){
+    #top-image{
+        margin-top: 56px;
+    }
     #top-image .logo{
         top: 24px;
         left: 24px;
@@ -994,9 +1013,9 @@ h2.en_title{
     background-image: repeating-linear-gradient(45deg, transparent, transparent 16px, #F7EDF7 16px, #F7EDF7 32px );
 }
 .roomcap p::before{
-    content:"\かわいく/";
+    content:"かわいく/";
     position: absolute;
-    top: 1.3rem;
+    top: .62rem;
     left:calc(50% - 8.2rem);
     font-size: 1rem;
 }
@@ -1628,6 +1647,9 @@ form textarea{
     }
 }
 @media screen and (min-width:993px) {
+    #apply.contact{
+        margin-top:60px; 
+    }
 }
 
 /* footer */
@@ -1638,6 +1660,7 @@ footer{
     text-align: center;
     color: white;
     font-size: .9rem;
+    padding-bottom: 68px;
 }
 footer h2{
     font-size: 1rem;
@@ -1656,6 +1679,6 @@ footer small{
 }
 @media screen and (min-width:993px) {
     footer{
-        padding-bottom: 70px;
+        padding-bottom: 16px;
     }
 }

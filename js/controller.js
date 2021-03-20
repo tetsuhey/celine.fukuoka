@@ -27,7 +27,13 @@ $(function(){
             }
         });
     });
-    $(".smpMenu li").on("click", function(){
+    $(".smpfixed li.menu").on("click", function(){
+        $(this).toggleClass('open');
+        $(this).parent().toggleClass('open');
+        $('.smpMenu').toggleClass('open');
+        $('.menuwrap').toggleClass('open');
+    });
+    $(".menuwrap li").on("click", function(){
         var _attr = $(this).attr("data");
         var _goHome = $(this).attr("goHome");
 
