@@ -639,6 +639,7 @@ a:hover{
     #top-image{
         margin: 0 auto;
         max-width: 1200px;
+        margin-top: 56px;
     }
     #top-image .logo{
         top: 24px;
@@ -734,12 +735,12 @@ a:hover{
 #tokuten h4::before,
 #campain h3 .tag::before{
     transform: rotate(-30deg);
-    left:24px;
+    left:calc(50% - 4rem);
 }
 #tokuten h4::after,
 #campain h3 .tag::after{
     transform: rotate(30deg);
-    right: 24px;
+    right: calc(50% - 4rem);
 }
 #tokuten div.d-flex,
 #campain div.d-flex{
