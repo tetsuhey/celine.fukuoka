@@ -29,7 +29,6 @@ $(function(){
     });
     $(".smpfixed li.menu").on("click", function(){
         $(this).toggleClass('open');
-        $(this).parent().toggleClass('open');
         $('.smpMenu').toggleClass('open');
         $('.menuwrap').toggleClass('open');
     });
@@ -50,7 +49,8 @@ $(function(){
             $("html,body").animate({scrollTop:scroll_top},600);
         }
 
-        $(".menu_btn").removeClass('open');
+        $(".smpfixed li.menu").removeClass('open');
+        $(".menuwrap").removeClass('open');
         $(".smpMenu").removeClass('open')
     });
     $("#apply_btn, #contact_btn").on("click", function(){
