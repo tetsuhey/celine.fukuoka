@@ -1146,6 +1146,32 @@ h2.en_title{
 #workstyle img.eyecatch{
     width: 100%;
 }
+#workstyle .info{
+    
+}
+#workstyle .info div{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: white;
+    border-radius: 16px;
+    margin: 16px 0;
+    border: 2px solid;
+    align-items: center;
+}
+#workstyle .info h3{
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 0 0 8px 0;
+    width: 100%;
+    margin-top: 0;
+}
+#workstyle .info p strong{
+    font-size: 1.8rem;
+    text-align: center;
+    display: block;
+    margin: 8px 0;
+}
 @media (min-width: 576px) {
     #workstyle .custome_dott_wrap .cap{
         width: 50vw;
@@ -1216,13 +1242,21 @@ h2.en_title{
         border-left: 1px dotted #333;
         border-right: 1px dotted #333;
     }
-    
     .mt-16{
         margin-top: 16px;
         padding-top: 8px;
     }
-    .custome_dott{
-        /* padding-top: 16px; */
+    #workstyle .info{
+        position: relative;
+    }
+    #workstyle .info div{
+        position: absolute;
+        top: 16px;
+        left: 32px;
+        padding: 16px;
+        background-color: rgba(247,243,237,.7);
+        box-shadow: 0 0 8px #c69c6d;
+        border: none;
     }
 }
 
