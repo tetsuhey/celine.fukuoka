@@ -166,7 +166,7 @@ $(function(){
 
             $.ajax({
                 type: "POST",
-                url: "./php/sendmail.php",
+                url: "../php/sendmail.php",
                 data: {
                     'age' : $age.val(),
                     'name' : $name.val(),
