@@ -45,7 +45,7 @@ $(function(){
                 window.location.href="../"+_attr;
             }
         }else{
-            var scroll_top = $(_attr).offset().top - 10;
+            var scroll_top = $(_attr).offset().top - 60;
             $("html,body").animate({scrollTop:scroll_top},600);
         }
 
