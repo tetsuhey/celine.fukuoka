@@ -13,9 +13,9 @@ $(function(){
         $(".menu_btn").removeClass('open');
         $(".smpMenu").removeClass('open')
     });
-    $(".chatlady_desc_wrap h4").on("click", function(){
-        $(this).next().toggleClass('open');
-        $(this).find('.arrow').toggleClass('open');
+    $(".chatlady_desc_wrap .arrowwrap div").on("click", function(){
+        $(this).parent().next().slideToggle('fast');
+        $(this).toggleClass('open');
     });
     $("#benefit .arrow").on('click', function(){
         $(this).toggleClass('open');
