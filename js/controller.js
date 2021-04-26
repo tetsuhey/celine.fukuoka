@@ -68,6 +68,7 @@ $(function(){
 
 
     $("form #send").on("click", function(){
+        $(this).prop('disabled', true);
         var errMsg1 = "この項目を空欄にすることはできません。";
         var errMsg2 = "数字以外の入力はできません。";
         var errMsg3 = "18歳未満の応募はできません。";
@@ -156,6 +157,7 @@ $(function(){
         }
 
         if(isErr){
+            $(this).prop('disabled', false);
             return false;
         }else{
             $age.next().hide();
@@ -179,14 +181,18 @@ $(function(){
                 $name.val('');
                 $phone.val('');
                 $mail.val('');
-                alert('ご応募ありがとうございます。送信されました。');
+                $(this).prop('disabled', false);
+                window.location.href = "./thanks.html";
+                // alert('ご応募ありがとうございます。送信されました。');
             }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
                 console.log("XMLHttpRequest : " + XMLHttpRequest.status);
                 console.log("textStatus     : " + textStatus);
                 console.log("errorThrown    : " + errorThrown.message);
                 $("#send").next().text("送信に失敗しました。時間を置いて再度送信しても解決しない場合は、別の方法でお問い合わせください。");
                 $("#send").next().show();
+                $(this).prop('disabled', false);
             });
+            $(this).prop('disabled', false);
             return false;
         }
     });
@@ -224,8 +230,5 @@ $(function(){
         }
         return false;
     }
-
-    function send_email(){
-
-    }
+    
 });
