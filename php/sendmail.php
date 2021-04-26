@@ -23,7 +23,8 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH'])
 header("Content-type: text/plain; charset=UTF-8");
 
 // お問い合わせメール送信
-$to = "celinelivechat@gmail.com";
+// $to = "celinelivechat@gmail.com";
+$to = "tetsu.o.8920@gmail.com";
 $subject = "WEBフォームからのお問い合わせ";
 $message = "WEBフォームからお問い合わせがありました。";
 $message .= "\r\n\r\n[お名前]\r\n".$name;
@@ -39,7 +40,8 @@ $headers = "From:webservice@chat-fukuoka.com";
 mb_language("ja");
 mb_internal_encoding("UTF-8");
 $is_send_mail_flg = false;
-if(mb_send_mail($to, $subject, $message, $headers)){
+// if(mb_send_mail($to, $subject, $message, $headers)){
+if(mb_send_mail($to, $subject, $message)){
     //送信成功
     $is_send_mail_flg = true;
     echo json_encode(
