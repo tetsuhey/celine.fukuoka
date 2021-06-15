@@ -3,17 +3,19 @@
 if(isset($_SERVER['HTTP_X_REQUESTED_WITH'])
    && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')
 {
-    $age = isset($_POST['age']) ? filter_input(INPUT_POST, 'age') : NULL;
-    $name = isset($_POST['name']) ? filter_input(INPUT_POST, 'name') : NULL;
-    $phone = isset($_POST['phone']) ? filter_input(INPUT_POST, 'phone') : NULL;
-    $mail = isset($_POST['mail']) ? filter_input(INPUT_POST, 'mail') : NULL;
-    $inquery = isset($_POST['inquery']) ? filter_input(INPUT_POST, 'inquery') : NULL;
-
-    if(is_null($mail)){
-        $mail = "";
-    }else if(is_null($inquery)){
-        $inquery = "";
-    }
+    $age = isset($_POST['age']) ? filter_input(INPUT_POST, 'age') : "";
+    $name = isset($_POST['name']) ? filter_input(INPUT_POST, 'name') : "";
+    $phone = isset($_POST['phone']) ? filter_input(INPUT_POST, 'phone') : "";
+    $mail = isset($_POST['mail']) ? filter_input(INPUT_POST, 'mail') : "";
+    $inquery = isset($_POST['inquery']) ? filter_input(INPUT_POST, 'inquery') : "";
+    $content = isset($_POST['content']) ? filter_input(INPUT_POST, 'content') : "";
+    $timezone = isset($_POST['timezone']) ? filter_input(INPUT_POST, 'timezone') : "";
+    $date1 = isset($_POST['date1']) ? filter_input(INPUT_POST, 'date1') : "";
+    $date2 = isset($_POST['date2']) ? filter_input(INPUT_POST, 'date2') : "";
+    $date3 = isset($_POST['date3']) ? filter_input(INPUT_POST, 'date3') : "";
+    $place = isset($_POST['place']) ? filter_input(INPUT_POST, 'place') : "";
+    $targetplace = isset($_POST['targetplace']) ? filter_input(INPUT_POST, 'targetplace') : "";
+    $ids = isset($_POST['ids']) ? filter_input(INPUT_POST, 'ids') : "";
 
 }else{
     return false;
@@ -28,13 +30,49 @@ $subject = "WEBフォームからのお問い合わせ";
 $message = "WEBフォームからお問い合わせがありました。";
 $message .= "\r\n\r\n[お名前]\r\n".$name;
 $message .= "\r\n\r\n[年齢]\r\n".$age;
-$message .= "\r\n\r\n[電話番号]\r\n".$phone;
 if(strlen($mail) > 0){
     $message .= "\r\n\r\n[メールアドレス]\r\n".$mail;
+}
+$message .= "\r\n\r\n[電話番号]\r\n".$phone;
+if(strlen($phone) > 0){
+    $message .= "\r\n\r\n[連絡可能な時間帯]\r\n".$timezone;
+}
+$message .= "\r\n\r\n[お問い合わせ種別]\r\n".$content;
+$message .= "\r\n\r\n[面接希望日]\r\n";
+if(strlen($date1) > 0){
+    $message .= "\r\n\r\n[第一希望]\r\n".$date1;
+}else{
+    $message .= "\r\n\r\n[第一希望]\r\n"."---";
+}
+if(strlen($date2) > 0){
+    $message .= "\r\n\r\n[第二希望]\r\n".$date2;
+}else{
+    $message .= "\r\n\r\n[第二希望]\r\n"."---";
+}
+if(strlen($date3) > 0){
+    $message .= "\r\n\r\n[第三希望]\r\n".$date3;
+}else{
+    $message .= "\r\n\r\n[第三希望]\r\n"."---";
+}
+if(strlen($place) > 0){
+    $message .= "\r\n\r\n[面接場所]\r\n".$place;
+}else{
+    $message .= "\r\n\r\n[面接場所]\r\n"."---";
+}
+if(strlen($targetPlace) > 0){
+    $message .= "\r\n\r\n[面接希望の場所]\r\n".$targetPlace;
+}else{
+    $message .= "\r\n\r\n[面接希望の場所]\r\n"."---";
+}
+if(strlen($ids) > 0){
+    $message .= "\r\n\r\n[身分証明書]\r\n".$ids;
+}else{
+    $message .= "\r\n\r\n[身分証明書]\r\n"."---";
 }
 if(strlen($inquery) > 0){
     $message .= "\r\n\r\n[お問い合わせ内容]\r\n".$inquery;
 }
+
 $headers = "From:webservice@chat-fukuoka.com";
 mb_language("ja");
 mb_internal_encoding("UTF-8");
@@ -54,7 +92,8 @@ if(mb_send_mail($to, $subject, $message, $headers)){
     echo json_encode(
         array(
             "result"=>false,
-            "msg"=>"メールの送信に失敗しました。入力内容をご確認のうえ、再度送信してください。"
+            "msg"=>"メールの送信に失敗しました。入力内容をご確認のうえ、再度送信してください。",
+            "content"=>$message
         )
     );
 }

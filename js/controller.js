@@ -5,6 +5,10 @@ $(function(){
         $toggleBtn.next('div').toggleClass('open');
         $toggleBtn.next('div').children("p").toggleClass('open');
     });
+    $("#showFormBtn").on('click', function(){
+        $target = $('#formrow');
+        $target.slideToggle();
+    });
     $(".menu_btn").on("click", function(){
         $(this).toggleClass('open');
         $(".smpMenu").toggleClass('open')
@@ -65,6 +69,15 @@ $(function(){
 
         }
     });
+    $('input[name="inlineRadioOptions"]').change(function () {
+        var $this = $(this);
+        if($this.val() == '面接の予約をしたい'){
+            $('#formConts').slideDown();
+        }else{
+            $('#formConts').slideUp();
+        }
+
+    });
 
 
     $("form #send").on("click", function(){
@@ -78,93 +91,104 @@ $(function(){
         var errMsg7 = "電話番号は10桁か11桁の半角数字を入力してください。";
         var isErr = false;
 
-        var $age = $("form input[name='age']");
-        var $name = $("form input[name='name']");
-        var $phone = $("form input[name='phone']");
-        var $mail = $("form input[name='mail']");
-        var $inquery = $("form textarea[name='inquery']");
-
-        // 年齢のチェック
-        if(isNull_chk($age.val())){
-            // 必須チェック
-            $age.next().text(errMsg1);
-            $age.next().show();
-            isErr = true;
-        }else if(isNumeric_chk($age.val())){
-            //数字チェック
-            $age.next().text(errMsg2);
-            $age.next().show();
-            isErr = true;
-        }else if(parseInt($age.val()) < 19){
-            // 年齢チェック
-            $age.next().text(errMsg3);
-            $age.next().show();
-            isErr = true;
-        }
-        else{
-            $age.next().hide();
-        }
+        var $content = $("form input[name='inlineRadioOptions']");//お問い合わせ内容
+        var $age = $("form input[name='age']");//年齢
+        var $name = $("form input[name='name']");//名前
+        var $phone = $("form input[name='phone']");//電話番号
+        var $timezone = $("form select[name='timezone']");//電話可能な時間帯
+        var $mail = $("form input[name='mail']");//メール
+        var $inquery = $("form textarea[name='inquery']");//お問い合わせ内容
+        var $date1 = $("form input[name='date1']");//面接希望日１
+        var $date2 = $("form input[name='date2']");//面接希望日２
+        var $date3 = $("form input[name='date3']");//面接希望日３
+        var $place = $("form input[name='placeoptions']");//面接場所
+        var $targetplace = $("form input[name='targetPlace']");//指定場所
+        var $ids = $("form input[name='idoptions']");//ID
 
         // 名前のチェック
         if(isNull_chk($name.val())){
             // 必須チェック
-            $name.next().text(errMsg1);
-            $name.next().show();
+            $("#nameErrMsg").text(errMsg1);
+            $("#nameErrMsg").show();
             isErr = true;
         }else if($.trim($name.val()).length > 30){
             // 文字数チェック
-            $name.next().text(errMsg6);
-            $name.next().show();
+            $("#nameErrMsg").text(errMsg6);
+            $("#nameErrMsg").show();
             isErr = true;
         }else{
-            $name.next().hide();
+            $("#nameErrMsg").text("");
+            $("#nameErrMsg").hide();
         }
-        // 電話番号のチェック
-        if(isNull_chk($phone.val())){
-            //　必須チェック
-            $phone.next().text(errMsg1);
-            $phone.next().show();
+        // 年齢のチェック
+        if(isNull_chk($age.val())){
+            // 必須チェック
+            $("#ageErrMsg").text(errMsg1);
+            $("#ageErrMsg").show();
             isErr = true;
-        }else if(isNumeric_chk($phone.val())){
-            //　数字チェック
-            $phone.next().text(errMsg2);
-            $phone.next().show();
+        }else if(isNumeric_chk($age.val())){
+            //数字チェック
+            $("#ageErrMsg").text(errMsg2);
+            $("#ageErrMsg").show();
             isErr = true;
-        }else if($.trim($phone.val()).length < 10 || $.trim($phone.val()).length > 11){
-            // 桁数チェック
-            $phone.next().text(errMsg7);
-            $phone.next().show();
+        }else if(parseInt($age.val()) < 19){
+            // 年齢チェック
+            $("#ageErrMsg").text(errMsg3);
+            $("#ageErrMsg").show();
             isErr = true;
-        }else{
-            $phone.next().hide();
+        }
+        else{
+            $("#ageErrMsg").text("");
+            $("#ageErrMsg").hide();
         }
         // メールのチェック
-        if(mail_chk($mail.val())){
-            $mail.next().text(errMsg4);
-            $mail.next().show();
+        if(isNull_chk($mail.val())){
+            // 必須チェック
+            $("#mailErrMsg").text(errMsg1);
+            $("#mailErrMsg").show();
+            isErr = true;
+        }else if(mail_chk($mail.val())){
+            $("#mailErrMsg").text(errMsg4);
+            $("#mailErrMsg").show();
             isErr = true;
         }else{
-            $mail.next().hide();
+            $("#mailErrMsg").text('');
+            $("#mailErrMsg").hide();
+        }
+        // 電話番号のチェック
+        if(isNumeric_chk($phone.val())){
+            //　数字チェック
+            $("#phoneErrMsg").text(errMsg2);
+            $("#phoneErrMsg").show();
+            isErr = true;
+        }else if($phone.val().length > 0 && ($.trim($phone.val()).length < 10 || $.trim($phone.val()).length > 11)){
+            // 桁数チェック
+            $("#phoneErrMsg").text(errMsg7);
+            $("#phoneErrMsg").show();
+            isErr = true;
+        }else{
+            $("#phoneErrMsg").text("");
+            $("#phoneErrMsg").hide();
         }
         // 問い合わせ内容のチェック
         var inquery_str = $inquery.val();
         if($.trim(inquery_str).length > 0 && $.trim(inquery_str).length > 500){
-            $inquery.next().text(errMsg5 + "[" + $.trim(inquery_str).length + " /500]");
-            $inquery.next().show();
+            $("#inqueryErrMsg").text(errMsg5 + "[" + $.trim(inquery_str).length + " /500]");
+            $("#inqueryErrMsg").show();
             isErr = true;
         }else{
-            $inquery.next().hide();
+            $("#inqueryErrMsg").text("");
+            $("#inqueryErrMsg").hide();
         }
 
         if(isErr){
             $(this).prop('disabled', false);
             return false;
         }else{
-            $age.next().hide();
-            $name.next().hide();
-            $phone.next().hide();
-            $mail.next().hide();
-            $("#send").next().hide();
+            $(".errormsg").hide();
+            $(".errormsg").text('');
+            $("#errMsg").hide();
+            $("#errMsg").text('');
 
             $.ajax({
                 type: "POST",
@@ -173,14 +197,25 @@ $(function(){
                     'age' : $age.val(),
                     'name' : $name.val(),
                     'phone' : $phone.val(),
+                    'timezone' : $timezone.val(),
                     'mail' : $mail.val(),
-                    'inquery' : $inquery.val()
+                    'inquery' : $inquery.val(),
+                    'content':$content.val(),
+                    'date1' : $date1.val(),
+                    'date2' : $date2.val(),
+                    'date3' : $date3.val(),
+                    'place' : $place.val(),
+                    'targetplace' : $targetplace.val(),
+                    'ids' : $ids.val()
                 }
             }).done(function(response, textStatus, xhr) {
-                $age.val('');
-                $name.val('');
-                $phone.val('');
-                $mail.val('');
+                $('form input').val('');
+                $('.errormsg').text('');
+                $('.errormsg').hide();
+                // $age.val('');
+                // $name.val('');
+                // $phone.val('');
+                // $mail.val('');
                 $(this).prop('disabled', false);
                 window.location.href = "./thanks.html";
                 // alert('ご応募ありがとうございます。送信されました。');
@@ -188,8 +223,8 @@ $(function(){
                 console.log("XMLHttpRequest : " + XMLHttpRequest.status);
                 console.log("textStatus     : " + textStatus);
                 console.log("errorThrown    : " + errorThrown.message);
-                $("#send").next().text("送信に失敗しました。時間を置いて再度送信しても解決しない場合は、別の方法でお問い合わせください。");
-                $("#send").next().show();
+                $("#errMsg").text("送信に失敗しました。時間を置いて再度送信しても解決しない場合は、別の方法でお問い合わせください。");
+                $("#errMsg").show();
                 $(this).prop('disabled', false);
             });
             $(this).prop('disabled', false);

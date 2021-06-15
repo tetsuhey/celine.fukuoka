@@ -1498,9 +1498,12 @@ form h3{
     text-align: center;
     font-size:1.2em;
 }
-form small.require{
+form p.require{
     color: #d94008;
     padding-left: 0px;
+    font-size: 11px;
+    line-height: 11px;
+    font-weight: normal;
 }
 form label{
     font-family: 'Montserrat', sans-serif;
@@ -1543,6 +1546,22 @@ form input[name="name"],
 form input[name="mail"],
 form textarea{
     width:100%;
+}
+form .form-check{
+    -ms-flex-align:flex-start;
+    align-items:flex-start;
+    margin-right: 1em;
+}
+form .form-check,
+.form-check-label,
+.form-check-input{
+    cursor: pointer;
+}
+.formTitle, form label{
+    display: inline-block;
+}
+form .formRow{
+    margin-bottom: 24px;
 }
 #apply a{
     color: #151515;

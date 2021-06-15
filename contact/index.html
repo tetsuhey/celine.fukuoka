@@ -81,11 +81,12 @@
                 <div class="col-10 offset-1 col-md-4 offset-md-0 btn" data="phone">
                     <a href="tel:0120897296"><span class="phone">電話で応募する</span></a>
                 </div>
-                <div class="col-10 offset-1 col-md-4 offset-md-0 btn" data="mail">
-                    <a href="mailto:celinelivechat@gmail.com"><span class="mail">メールで応募する</span></a>
+                <div id="showFormBtn" class="col-10 offset-1 col-md-4 offset-md-0 btn" data="mail">
+                    <!-- <a href="mailto:celinelivechat@gmail.com"><span class="mail">メールで応募する</span></a> -->
+                    <p><span class="mail">メールで応募する</span></p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id="formrow">
                 <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
                     <div class="form-wrap">
                         <!-- <form class="" action="./php/sendmail.php" method="post"> -->
@@ -93,53 +94,130 @@
                             <h3>応募フォーム</h3>
                             <div id="form-body" class="container">
                                 <div class="row">
-                                    <div class="col-12">
-                                        <small class="require">必須</small>
-                                        <label>ご年齢<small>*18歳未満の方の応募はできません。</small><br />
-                                            <input name="age" type="number" placeholder="20" maxlength="2" minlength="2" required="true" size="6" />
-                                            <p class="errormsg"></p>
-                                        </label>
-                                        
+                                    <div class="formRow col-12">
+                                        <p class="require">必須</p>
+                                        <p class="formTitle">お問い合わせ</p>
+                                        <div class="d-flex">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="面接の予約をしたい" checked="checked">
+                                                <label class="form-check-label" for="inlineRadio1">面接の予約をしたい</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="相談したい">
+                                                <label class="form-check-label" for="inlineRadio2">相談したい</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="その他">
+                                                <label class="form-check-label" for="inlineRadio3">その他</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="formRow col-12">
+                                        <p class="require">必須</p>
+                                        <label class="formTitle" for="nickname">お名前<small>*ニックネーム可</small></label>
+                                        <input id="nickname" name="name" type="text" placeholder="(例)HANAKO" maxlength="100" minlength="0" required="true" size="30" />
+                                        <p id="nameErrMsg" class="errormsg"></p>
+                                    </div>
+                                    <div class="formRow col-12">
+                                        <p class="require">必須</p>
+                                        <label class="formTitle" for="age">ご年齢<small>*18歳未満の方の応募はできません。</small></label>
+                                        <input id='age' name="age" type="number" placeholder="20" maxlength="2" minlength="2" required="true" size="6" />
+                                        <p id="ageErrMsg" class="errormsg"></p>
+                                    </div>
+                                    <div class="formRow col-12">
+                                        <p class="require">必須</p>
+                                        <label class="formTitle" for="mail">メールアドレス</label>
+                                        <input id="mail" name="mail" type="email" placeholder="(例)celine.fukuoka@celine.com" required="true" />
+                                        <p id="mailErrMsg" class="errormsg"></p>
+                                    </div>
+                                    <div class="formRow col-12 d-flex flex-column flex-md-row">
+                                        <div class="d-flex flex-column">
+                                            <label class="formTitle" for="phone">お電話番号</label>
+                                            <input id="phone" name="phone" type="telephone" placeholder="(例)090****1234" maxlength="14" minlength="10" />
+                                            <p id="phoneErrMsg" class="errormsg"></p>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <label for="timezone" class="formTitle">お電話でのご連絡可能な時間帯</label>
+                                            <select id="timezone" name="timezone">
+                                                <option value="指定なし" selected>指定なし</option>
+                                                <option value="午前中（9:30 ~ 12:00）">午前中（9:30 ~ 12:00）</option>
+                                                <option value="お昼① (12:00 ~ 15:00）">お昼① (12:00 ~ 15:00）</option>
+                                                <option value="お昼② (15:00 ~ 18:00）">お昼② (15:00 ~ 18:00）</option>
+                                                <option value="夜間  (18:00 ~ 20:00）">夜間  (18:00 ~ 20:00）</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="formConts">
+                                    <div class="formRow col-12">
+                                        <p class="formTitle">面接希望日</p>
+                                        <small>面接を実施するご希望の日時をご記入ください。</small>
+                                        <div class="">
+                                            <label for="date1">第一希望</label>
+                                            <input id="date1" type="text" name="date1" placeholder="(例)2021/06/01 午前中" maxlength="30">
+                                        </div>
+                                        <div class="">
+                                            <label for="date2">第二希望</label>
+                                            <input id="date2" type="text" name="date2" placeholder="(例)2021/06/02 午後" maxlength="30">
+                                        </div>
+                                        <div class="">
+                                            <label for="date3">第三希望</label>
+                                            <input id="date3" type="text" name="date3" placeholder="(例)2021/06/03 夕方" maxlength="30">
+                                        </div>
+                                    </div>
+                                    <div class="formRow col-12">
+                                        <p class="formTitle">面接場所</p>
+                                        <small>弊社では面接を実施する場所をご指定いたくことが可能です。</small>
+                                        <div class="form-group">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="placeoptions" id="place1" value="場所を指定して面接をする" />
+                                                <label class="form-check-label" for="place1">場所を指定して面接をする</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="placeoptions" id="place2" value="弊社指定の場所で面接する" />
+                                                <label class="form-check-label" for="place2">弊社指定の場所で面接する</label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label for='targetPlace'>指定場所</label>
+                                            <input type="text" name="targetPlace" id='targetPlace' placeholder="(例)西鉄薬院駅周辺" maxlength="30" />
+                                        </div>
+                                    </div>
+                                    <div class="formRow col-12">
+                                        <p class="formTitle">面接時の身分証明書</p>
+                                        <small>面接時の履歴書は不要です。年齢確認のため、顔写真付きの身分証明書をご持参ください。</small>
+                                        <div class="form-group">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="idoptions" id="driver" value="運転免許証">
+                                                <label class="form-check-label" for="driver">運転免許証</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="idoptions" id="passport" value="パスポート">
+                                                <label class="form-check-label" for="passport">パスポート</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="idoptions" id="mynumber" value="マイナンバーカード">
+                                                <label class="form-check-label" for="mynumber">マイナンバーカード</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="idoptions" id="card" value="住基カード">
+                                                <label class="form-check-label" for="card">住基カード</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="idoptions" id="other" value="その他">
+                                                <label class="form-check-label" for="other">その他</label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <small class="require">必須</small>
-                                        <label>お名前<small>*ニックネーム可</small><br />
-                                            <input name="name" type="text" placeholder="HANAKO" maxlength="100" minlength="0" required="true" size="30" />
-                                            <p class="errormsg"></p>
-                                        </label>
-                                        
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <small class="require">必須</small>
-                                        <label>お電話番号<br />
-                                            <input name="phone" type="telephone" placeholder="090****1234" maxlength="30" minlength="10" required="true" size="14" />
-                                            <p class="errormsg"></p>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <label>メールアドレス<br />
-                                            <input name="mail" type="email" placeholder="celine.fukuoka@celine.com" />
-                                            <p class="errormsg"></p>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <label>お問い合わせ内容<br />
-                                            <textarea name="inquery" placeholder="連絡可能な時間帯、ご質問、ご相談など" rows="5"></textarea>
-                                            <p class="errormsg"></p>
-                                        </label>
+                                    <div class="formRow col-12">
+                                        <label for="inquery">お問い合わせ内容</label>
+                                        <textarea id="inquery" name="inquery" placeholder="連絡可能な時間帯、ご質問、ご相談など" rows="5"></textarea>
+                                        <p id="inqueryErrMsg" class="errormsg"></p>
                                     </div>
                                 </div>
                                 <div class="center">
                                     <button id="send" class="btn" type="submit">送信する</button>
-                                    <p class="errormsg" style="margin-top:16px;"></p>
+                                    <p id="errMsg" class="errormsg" style="margin-top:16px;"></p>
                                 </div>
                             </div>
                         </form>
