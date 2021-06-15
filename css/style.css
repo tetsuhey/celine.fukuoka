@@ -1530,7 +1530,7 @@ form input{
     line-height: 1.35;
 }
 form input[type="radio"]{
-    border-radius: unset;
+    border-radius: 50%;
 }
 form input[name="age"]{
     width: 4rem;
