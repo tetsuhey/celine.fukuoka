@@ -1,5 +1,5 @@
 $(function(){
-    var isHome = false;
+    var isHome = $(location).attr('origin') ==  $(location).attr('href') ? true:false;
     if(isHome){
         // $.get('../php/rss.php',function(data){
         //     $('#feed').html(data);
