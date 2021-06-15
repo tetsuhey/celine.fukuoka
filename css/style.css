@@ -1529,6 +1529,9 @@ form input{
     border-radius: 0;
     line-height: 1.35;
 }
+form input[type="radio"]{
+    border-radius: unset;
+}
 form input[name="age"]{
     width: 4rem;
 }

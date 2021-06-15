@@ -1,5 +1,6 @@
 <?php 
     date_default_timezone_set('Asia/Tokyo');
+    header("Content-type: text/plain; charset=UTF-8");
      
     $url = "http://feedblog.ameba.jp/rss/ameblo/celine-fuk/rss20.xml";
     $rss =  simplexml_load_file($url);
