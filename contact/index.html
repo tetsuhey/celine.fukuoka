@@ -86,10 +86,9 @@
                     <p><span class="mail">メールで応募する</span></p>
                 </div>
             </div>
-            <div class="row" id="formrow">
+            <div class="row" id="formrow" style="display: none;">
                 <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
                     <div class="form-wrap">
-                        <!-- <form class="" action="./php/sendmail.php" method="post"> -->
                             <form id="apply_form" accept-charset="utf-8" class="" method="post">
                             <h3>応募フォーム</h3>
                             <div id="form-body" class="container">
@@ -97,7 +96,7 @@
                                     <div class="formRow col-12">
                                         <p class="require">必須</p>
                                         <p class="formTitle">お問い合わせ</p>
-                                        <div class="d-flex">
+                                        <div class="d-flex flex-column flex-md-row">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="面接の予約をしたい" checked="checked">
                                                 <label class="form-check-label" for="inlineRadio1">面接の予約をしたい</label>

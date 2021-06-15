@@ -1,4 +1,19 @@
 $(function(){
+    var isHome = false;
+    $.ajax({
+        type: "GET",
+        url: "php/rss.php"
+    }).done(function(data) {
+        $('#feed').html(data);
+    }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
+    });
+    if(isHome){
+        $.get('../php/rss.php',function(data){
+            $('#feed').html(data);
+        });
+    }
+    
+
     $(".qa_btn").on('click', function(){
         $toggleBtn = $(this);
         $toggleBtn.toggleClass('open');
