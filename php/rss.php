@@ -23,9 +23,15 @@
     
     date_default_timezone_set('Asia/Tokyo');
     header("Content-type: text/plain; charset=UTF-8");
-     
+
     $url = "http://feedblog.ameba.jp/rss/ameblo/celine-fuk/rss20.xml";
-    $rss =  simplexml_load_file($url);
+
+    $str = file_get_contents($url);
+    $xml = str_replace('<rss', '<rss encoding="UTF-8"', mb_convert_encoding($str, 'UTF-8', 'auto'));
+    $rss = simplexml_load_string($xml, 'simpleXMLElement', LIBXML_NOCDATA);
+     
+    
+    // $rss =  simplexml_load_file($url);
     // $rss = curl_get_contents($url);
     // $rss = simplexml_load_string($rss);
     $i = 0;
