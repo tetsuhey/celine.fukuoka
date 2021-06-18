@@ -1,4 +1,26 @@
 <?php 
+
+    /**
+    * curl_get_contents
+    * file_get_contentsの代替関数。
+    * allow_url_fopen=off時にURLからファイル内容を取得する際に使用します
+    * @param string $url
+    * @param integer $timeout
+    * @return string
+    */
+    function curl_get_contents( $url, $timeout=60 )
+    {
+        $ch = curl_init();
+        curl_setopt( $ch, CURLOPT_URL, $url );
+        curl_setopt( $ch, CURLOPT_HEADER, false );
+        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+        curl_setopt( $ch, CURLOPT_TIMEOUT, $timeout );
+        $result = curl_exec( $ch );
+        curl_close( $ch );
+        return $result;
+    }
+
+    
     date_default_timezone_set('Asia/Tokyo');
     header("Content-type: text/plain; charset=UTF-8");
      
@@ -102,25 +124,5 @@
         }
 
         return $results;
-    }
-
-    /**
-    * curl_get_contents
-    * file_get_contentsの代替関数。
-    * allow_url_fopen=off時にURLからファイル内容を取得する際に使用します
-    * @param string $url
-    * @param integer $timeout
-    * @return string
-    */
-    function curl_get_contents( $url, $timeout=60 )
-    {
-        $ch = curl_init();
-        curl_setopt( $ch, CURLOPT_URL, $url );
-        curl_setopt( $ch, CURLOPT_HEADER, false );
-        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-        curl_setopt( $ch, CURLOPT_TIMEOUT, $timeout );
-        $result = curl_exec( $ch );
-        curl_close( $ch );
-        return $result;
     }
 ?>
