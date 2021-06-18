@@ -26,48 +26,51 @@ header("Content-type: text/plain; charset=UTF-8");
 
 // お問い合わせメール送信
 $to = "celinelivechat@gmail.com";
+// $to = "tetsu.o.8920@gmail.com";
 $subject = "WEBフォームからのお問い合わせ";
 $message = "WEBフォームからお問い合わせがありました。";
-$message .= "\r\n\r\n[お名前]\r\n".$name;
-$message .= "\r\n\r\n[年齢]\r\n".$age;
+$message .= "\r\n\r\n[お問い合わせ種別] ".$content;
+$message .= "\r\n\r\n[お名前] ".$name;
+$message .= "\r\n\r\n[年齢] ".$age;
 if(strlen($mail) > 0){
-    $message .= "\r\n\r\n[メールアドレス]\r\n".$mail;
+    $message .= "\r\n\r\n[メールアドレス] ".$mail;
 }
-$message .= "\r\n\r\n[電話番号]\r\n".$phone;
-if(strlen($phone) > 0){
-    $message .= "\r\n\r\n[連絡可能な時間帯]\r\n".$timezone;
-}
-$message .= "\r\n\r\n[お問い合わせ種別]\r\n".$content;
-$message .= "\r\n\r\n[面接希望日]\r\n";
-if(strlen($date1) > 0){
-    $message .= "\r\n\r\n[第一希望]\r\n".$date1;
-}else{
-    $message .= "\r\n\r\n[第一希望]\r\n"."---";
-}
-if(strlen($date2) > 0){
-    $message .= "\r\n\r\n[第二希望]\r\n".$date2;
-}else{
-    $message .= "\r\n\r\n[第二希望]\r\n"."---";
-}
-if(strlen($date3) > 0){
-    $message .= "\r\n\r\n[第三希望]\r\n".$date3;
-}else{
-    $message .= "\r\n\r\n[第三希望]\r\n"."---";
-}
-if(strlen($place) > 0){
-    $message .= "\r\n\r\n[面接場所]\r\n".$place;
-}else{
-    $message .= "\r\n\r\n[面接場所]\r\n"."---";
-}
-if(strlen($targetPlace) > 0){
-    $message .= "\r\n\r\n[面接希望の場所]\r\n".$targetPlace;
-}else{
-    $message .= "\r\n\r\n[面接希望の場所]\r\n"."---";
-}
-if(strlen($ids) > 0){
-    $message .= "\r\n\r\n[身分証明書]\r\n".$ids;
-}else{
-    $message .= "\r\n\r\n[身分証明書]\r\n"."---";
+$message .= "\r\n\r\n[電話番号] ".$phone;
+$message .= "\r\n\r\n[連絡可能な時間帯] ".$timezone;
+
+if($content == '面接の予約をしたい'){
+
+    $message .= "\r\n\r\n[面接希望日]";
+    if(strlen($date1) > 0){
+        $message .= "\r\n第一希望:".$date1;
+    }else{
+        $message .= "\r\n第一希望:"."---";
+    }
+    if(strlen($date2) > 0){
+        $message .= "\r\n第二希望:".$date2;
+    }else{
+        $message .= "\r\n第二希望:"."---";
+    }
+    if(strlen($date3) > 0){
+        $message .= "\r\n第三希望:".$date3;
+    }else{
+        $message .= "\r\n第三希望:"."---";
+    }
+    if(strlen($place) > 0){
+        $message .= "\r\n\r\n[面接場所] ".$place;
+    }else{
+        $message .= "\r\n\r\n[面接場所] "."---";
+    }
+    if(strlen($targetplace) > 0){
+        $message .= "\r\n\r\n[面接希望の場所]".$targetplace;
+    }else{
+        $message .= "\r\n\r\n[面接希望の場所] "."---";
+    }
+    if(strlen($ids) > 0){
+        $message .= "\r\n\r\n[身分証明書] ".$ids;
+    }else{
+        $message .= "\r\n\r\n[身分証明書] "."---";
+    }
 }
 if(strlen($inquery) > 0){
     $message .= "\r\n\r\n[お問い合わせ内容]\r\n".$inquery;

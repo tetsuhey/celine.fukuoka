@@ -1,9 +1,6 @@
 $(function(){
     var isHome = ($(location).attr('origin') + '/' ==  $(location).attr('href')) ? true:false;
-    if(isHome){
-        // $.get('../php/rss.php',function(data){
-        //     $('#feed').html(data);
-        // });
+    // if(isHome){
         $.ajax({
             type: "GET",
             url: "php/rss.php"
@@ -11,7 +8,7 @@ $(function(){
             $('#feed').html(data);
         }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
         });
-    }
+    // }
     
 
     $(".qa_btn").on('click', function(){
@@ -106,7 +103,7 @@ $(function(){
         var errMsg7 = "電話番号は10桁か11桁の半角数字を入力してください。";
         var isErr = false;
 
-        var $content = $("form input[name='inlineRadioOptions']");//お問い合わせ内容
+        var $content = $("form input[name='inlineRadioOptions']:checked");//お問い合わせ内容
         var $age = $("form input[name='age']");//年齢
         var $name = $("form input[name='name']");//名前
         var $phone = $("form input[name='phone']");//電話番号
@@ -116,9 +113,9 @@ $(function(){
         var $date1 = $("form input[name='date1']");//面接希望日１
         var $date2 = $("form input[name='date2']");//面接希望日２
         var $date3 = $("form input[name='date3']");//面接希望日３
-        var $place = $("form input[name='placeoptions']");//面接場所
+        var $place = $("form input[name='placeoptions']:checked");//面接場所
         var $targetplace = $("form input[name='targetPlace']");//指定場所
-        var $ids = $("form input[name='idoptions']");//ID
+        var $ids = $("form input[name='idoptions']:checked");//ID
 
         // 名前のチェック
         if(isNull_chk($name.val())){
@@ -205,6 +202,10 @@ $(function(){
             $("#errMsg").hide();
             $("#errMsg").text('');
 
+            console.log(!($place.val()) ? "undefined":$place.val());
+            console.log($content.val());
+
+
             $.ajax({
                 type: "POST",
                 url: "../php/sendmail.php",
@@ -219,9 +220,9 @@ $(function(){
                     'date1' : $date1.val(),
                     'date2' : $date2.val(),
                     'date3' : $date3.val(),
-                    'place' : $place.val(),
+                    'place' : !($place.val()) ? "":$place.val(),
                     'targetplace' : $targetplace.val(),
-                    'ids' : $ids.val()
+                    'ids' : !($ids.val()) ? "":$ids.val()
                 }
             }).done(function(response, textStatus, xhr) {
                 $('form input').val('');
