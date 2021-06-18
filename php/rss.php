@@ -85,8 +85,8 @@
             }
             
         }
-        $output .= '<div class="row"><div class="col-12 col-md-6 offset-md-3">';
-        $output .= '<a class="more btn center" href="https://ameblo.jp/celine-fuk/entrylist.html" target="_blank">すべての記事へ</a>';
+        $output .= '<div class="row"><div class="col-12 col-md-6 offset-md-3 center">';
+        $output .= '<a class="more btn" href="https://ameblo.jp/celine-fuk/entrylist.html" target="_blank">すべての記事へ</a>';
         $output .= '</div></div>';
     }else{
         $output .= '<div class="row"><div class="col-12 center">記事が見つかりませんでした。</div></div>';

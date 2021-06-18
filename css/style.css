@@ -1644,11 +1644,12 @@ form .formRow{
     font-size: small;
     color: #aaa;
 }
-#feed .godetail{
-
+#feed .blogtitle{
+    font-size: 1.1em;
+    color: #f075ae;
 }
-#feed .more{
-
+#feed .godetail{
+    font-size: .9em;
 }
 
 /* footer */
