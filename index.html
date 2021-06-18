@@ -655,52 +655,6 @@
     <section id="blogs">
         <h2 class="main_cap en_title"><small>BLOGS</small><br />スタッフブログ</h2>
         <div id="feed" class="container"></div>
-        <div>
-            <?php echo 'タイトルです'; ?>
-            <? php
-     
-    $url = "http://feedblog.ameba.jp/rss/ameblo/celine-fuk/rss20.xml";
-    $rss =  simplexml_load_file($url);
-    $i = 0;
-    $max = 5;
-    $output = '';
-    if($rss){
-        foreach( $rss->channel->item as $item )
-        {
-            if(!preg_match('/^PR:/',$item->title )){
-                if($i < $max){
-                  $timestamp = strtotime( $item->pubDate );
-                  $date = date( 'Y.m.d',$timestamp );
-                  $now_url = (empty($_SERVER["HTTPS"]) ? "http://" : "https://") . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-                  $item->thumbnail = $now_url . "/res/noimage.jpg";
-
-                  if( preg_match_all('/<img(.+?)>/is', $item->description, $matches) ){
-                    foreach( $matches[0] as $img ){
-                        if( preg_match('/src=[\'"](.+?jpe?g)[\'"]/', $img, $m) ){
-                            $item->thumbnail = $m[1];
-                        }
-                    }
-                  }
-
-                  $output .= '<div class="row"><div class="col-12 col-md-6 offset-md-3">';
-                  $output .= '<a href="'. $item->link .'" target="_blank">';
-                  $output .= '<div class="d-flex">';
-                  $output .= '<img class="blog_thumns" src="'.$item->thumbnail.'" alt="'.$item->title.'" />';
-                  $output .= '<div>';
-                  $output .= '<time datetime="' . $item->pubDate . '">' . $date . '</time>';
-                  $output .= '<p class="blogtitle">'.$item->title.'</p>';
-                  $output .= '</div>';
-                  $output .= '</div>';
-                  $output .= '</a>';
-                  $output .= '</div></div>';
-                  $i++;
-                }
-            }
-            
-        }
-    }
-    ?>
-        </div>
     </section>
 
     <footer class="bk-pink_v">
