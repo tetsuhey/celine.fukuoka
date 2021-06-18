@@ -50,7 +50,7 @@
             */
 
             // error_log(var_export($array, true), 3, './debug.txt');
-            error_log(print_r($array, true), 3, './debug.txt');
+            error_log(print_r($item->title , true), 3, './debug.txt');
              
             if(!preg_match('/^PR:/',$item->title )){
                 if($i < $max){
