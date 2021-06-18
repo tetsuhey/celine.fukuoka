@@ -55,14 +55,16 @@
                   $date = date( 'Y.m.d',$timestamp );
                   // 画像がなかった場合のデフォルト画像を指定しておきます
                   $now_url = (empty($_SERVER["HTTPS"]) ? "http://" : "https://") . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-                  $item->thumbnail = trim($now_url,"/") . "/res/noimage.jpg";
+                //   $item->thumbnail = trim($now_url,"/") . "/res/noimage.jpg";
+                $item->thumbnail = $now_url . "/res/noimage.jpg";
 
                   // 記事の中で最初に使われている画像を検索、設定する
                   if( preg_match_all('/<img(.+?)>/is', $item->description, $matches) ){
                     foreach( $matches[0] as $img ){
-                        if( preg_match('/src=[\'"](.+?jpe?g)[\'"]/', $img, $m) ){
-                            $item->thumbnail = $m[1];
-                        }
+                        $item->thumbnail = $img;
+                        // if( preg_match('/src=[\'"](.+?jpe?g)[\'"]/', $img, $m) ){
+                            // $item->thumbnail = $m[1];
+                        // }
                     }
                   }
                 //   $item->title = mb_convert_encoding($item->title,"utf-8","sjis");
