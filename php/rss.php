@@ -26,7 +26,7 @@
      
     $url = "http://feedblog.ameba.jp/rss/ameblo/celine-fuk/rss20.xml";
     // $rss =  simplexml_load_file($url);
-    $rss = curl_get_contents($url);
+    // $rss = curl_get_contents($url);
     $rss = simplexml_load_string($rss);
     $i = 0;
     // 取得件数
