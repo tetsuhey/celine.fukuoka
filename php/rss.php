@@ -55,7 +55,7 @@
             * $item->description;
             */
 
-            error_log(print_r($item->title , true), 3, './debug.txt');
+            $item->title = mb_convert_encoding($item->title, 'sjis', 'UTF-8');
              
             if(!preg_match('/^PR:/',$item->title )){
                 if($i < $max){
