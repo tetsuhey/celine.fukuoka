@@ -54,7 +54,8 @@
                   $timestamp = strtotime( $item->pubDate );
                   $date = date( 'Y.m.d',$timestamp );
                   // 画像がなかった場合のデフォルト画像を指定しておきます
-                  $now_url = (empty($_SERVER["HTTPS"]) ? "http://" : "https://") . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+                //   $now_url = (empty($_SERVER["HTTPS"]) ? "http://" : "https://") . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+                $now_url = (empty($_SERVER["HTTPS"]) ? "http://" : "https://") . $_SERVER["HTTP_HOST"];
                 //   $item->thumbnail = trim($now_url,"/") . "/res/noimage.jpg";
                 $item->thumbnail = $now_url . "/res/noimage.jpg";
 
