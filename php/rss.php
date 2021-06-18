@@ -48,6 +48,9 @@
             * 詳細
             * $item->description;
             */
+
+            // error_log(var_export($array, true), 3, './debug.txt');
+            error_log(print_r($array, true), 3, './debug.txt');
              
             if(!preg_match('/^PR:/',$item->title )){
                 if($i < $max){
@@ -67,7 +70,7 @@
                         }
                     }
                   }
-                //   $item->title = mb_convert_encoding($item->title,"utf-8","sjis");
+
                   $output .= '<div class="row"><div class="col-12 col-md-6 offset-md-3">';
                   $output .= '<a href="'. $item->link .'" target="_blank">';
                   $output .= '<div class="d-flex">';
