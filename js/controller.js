@@ -7,7 +7,7 @@ $(function(){
         }).done(function(data) {
             $('#feed').html(data);
         }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
-            $('#feed').html("<div class='row'><div class='col-12'>記事の読み込みに失敗しました。</div></div>");
+            $('#feed').html("<div class='row'><div class='col-12 center'>記事の読み込みに失敗しました。</div></div>");
         });
     }
     
