@@ -75,9 +75,13 @@
                   $output .= '<div>';
                   $output .= '<time datetime="' . $item->pubDate . '">' . $date . '</time>';
                   $output .= '<p class="blogtitle">'.$item->title.'</p>';
+                  $output .= '<p class="godetail">もっと見る</p>';
                   $output .= '</div>';
                   $output .= '</div>';
                   $output .= '</a>';
+                  $output .= '</div></div>';
+                  $output .= '<div class="row"><div class="col-12 col-md-6 offset-md-3">';
+                  $output .= '<a class="more btn" href="https://ameblo.jp/celine-fuk/entrylist.html" target="_blank">すべての記事へ</a>';
                   $output .= '</div></div>';
                   $i++;
                 }
