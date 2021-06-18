@@ -1632,15 +1632,15 @@ form .formRow{
     border-radius: 4px;
     margin-bottom: 8px;
 }
-#feed .blogcont .d-felx img{
+#feed .blogcont .d-flex img{
     width: 30%;
     max-width: 130px;
 }
-#feed .blogcont .d-felx div{
+#feed .blogcont .d-flex div{
     width: calc(70% - 16px);
     margin-left: 16px;
 }
-#feed .blogcont .d-felx div time{
+#feed .blogcont .d-flex div time{
     font-size: small;
     color: #ddd;
 }
