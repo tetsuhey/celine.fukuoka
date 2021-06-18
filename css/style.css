@@ -1624,6 +1624,10 @@ form .formRow{
     }
 }
 
+#feed img{
+    max-width: 150px;
+}
+
 /* footer */
 footer{
     /* background-color: #151515; */
