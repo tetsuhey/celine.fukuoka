@@ -1,14 +1,15 @@
 $(function(){
     var isHome = ($(location).attr('origin') + '/' ==  $(location).attr('href')) ? true:false;
-    // if(isHome){
+    if(isHome){
         $.ajax({
             type: "GET",
             url: "php/rss.php"
         }).done(function(data) {
             $('#feed').html(data);
         }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
+            $('#feed').html("<div class='row'><div class='col-12'>記事の読み込みに失敗しました。</div></div>");
         });
-    // }
+    }
     
 
     $(".qa_btn").on('click', function(){

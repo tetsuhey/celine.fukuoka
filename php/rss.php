@@ -48,7 +48,6 @@
             * 詳細
             * $item->description;
             */
-            $item->title = mb_convert_encoding($item->title,"utf-8","sjis");
              
             if(!preg_match('/^PR:/',$item->title )){
                 if($i < $max){
@@ -66,7 +65,7 @@
                         }
                     }
                   }
-                
+                  $item->title = mb_convert_encoding($item->title,"utf-8","sjis");
                   $output .= '<div class="row"><div class="col-12 col-md-6 offset-md-3">';
                   $output .= '<a href="'. $item->link .'" target="_blank">';
                   $output .= '<div class="d-flex">';
