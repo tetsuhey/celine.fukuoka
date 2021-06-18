@@ -656,9 +656,8 @@
         <h2 class="main_cap en_title"><small>BLOGS</small><br />スタッフブログ</h2>
         <div id="feed" class="container"></div>
         <div>
-            <?php
-    date_default_timezone_set('Asia/Tokyo');
-    header("Content-type: text/plain; charset=UTF-8");
+            <?php echo 'タイトルです'; ?>
+            <? php
      
     $url = "http://feedblog.ameba.jp/rss/ameblo/celine-fuk/rss20.xml";
     $rss =  simplexml_load_file($url);
