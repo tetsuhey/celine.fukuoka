@@ -76,7 +76,7 @@
                   $output .= '<div>';
                   $output .= '<time datetime="' . $item->pubDate . '">' . $date . '</time>';
                   $output .= '<p class="blogtitle">'.$item->title.'</p>';
-                  $output .= '<p class="godetail">この記事を読む</p>';
+                  $output .= '<p class="godetail">この記事を読む>>></p>';
                   $output .= '</div>';
                   $output .= '</div>';
                   $output .= '</a>';

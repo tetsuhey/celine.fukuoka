@@ -1633,6 +1633,7 @@ form .formRow{
 }
 #feed .blogcont .d-flex img{
     width: 30%;
+    height: 100%;
     max-width: 130px;
     border-radius: 4px 0 0 4px;
 }
@@ -1645,7 +1646,7 @@ form .formRow{
     color: #aaa;
 }
 #feed .blogtitle{
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: #f075ae;
 }
 #feed .godetail{
