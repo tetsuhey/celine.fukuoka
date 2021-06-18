@@ -48,6 +48,7 @@
             * 詳細
             * $item->description;
             */
+            $item->title = mb_convert_encoding($item->title,"utf-8","sjis");
              
             if(!preg_match('/^PR:/',$item->title )){
                 if($i < $max){
