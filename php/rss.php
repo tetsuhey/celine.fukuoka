@@ -26,7 +26,7 @@
                     $timestamp = strtotime( $item->pubDate );
                     $date = date( 'Y.m.d',$timestamp );
                     $thumbs = $item->description;
-                    $output = '<div class="row"><div class="col-12 col-md-6 offset-md-3">';
+                    $output .= '<div class="row"><div class="col-12 col-md-6 offset-md-3">';
                         $output .= '<a href="'. $item->link .'" target="_blank">';
                             $output .= '<div class="d-flex">';
                                 $output .= '<img src="'.$thumbs->img.'" alt="'.$item->title.'/>';
