@@ -61,17 +61,17 @@
                   // 記事の中で最初に使われている画像を検索、設定する
                   if( preg_match_all('/<img(.+?)>/is', $item->description, $matches) ){
                     foreach( $matches[0] as $img ){
-                        $item->thumbnail = $img;
-                        // if( preg_match('/src=[\'"](.+?jpe?g)[\'"]/', $img, $m) ){
-                            // $item->thumbnail = $m[1];
-                        // }
+                        // $item->thumbnail = $img;
+                        if( preg_match('/src=[\'"](.+?jpe?g)[\'"]/', $img, $m) ){
+                            $item->thumbnail = $m[1];
+                        }
                     }
                   }
                 //   $item->title = mb_convert_encoding($item->title,"utf-8","sjis");
                   $output .= '<div class="row"><div class="col-12 col-md-6 offset-md-3">';
                   $output .= '<a href="'. $item->link .'" target="_blank">';
                   $output .= '<div class="d-flex">';
-                  $output .= '<img class="blog_thumns src="'.$item->thumbnail.'" alt="'.$item->title.'" />';
+                  $output .= '<img class="blog_thumns" src="'.$item->thumbnail.'" alt="'.$item->title.'" />';
                   $output .= '<div>';
                   $output .= '<time datetime="' . $item->pubDate . '">' . $date . '</time>';
                   $output .= '<p class="blogtitle">'.$item->title.'</p>';
