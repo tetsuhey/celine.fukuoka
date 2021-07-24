@@ -147,6 +147,9 @@ a:hover{
 .container{
     max-width: 100%;
 }
+.spacer_top{
+    margin-top: 24px;
+}
 
 @media screen and (min-width:767px) and ( max-width:992px) {
     html, body{
@@ -416,9 +419,10 @@ a:hover{
 }
 #top-image .wrap3 h2{
     text-align: left;
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1.5rem;
-    margin-top: -10px;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
 }
 #top-image .wrap3 li{
     margin-top: 8px;
@@ -433,6 +437,9 @@ a:hover{
 }
 #top-image .wrap3 li:nth-child(3):before{
     content: "3";
+}
+#top-image .wrap3 li:nth-child(4):before{
+    content: "4";
 }
 #top-image .wrap3 li:before{
     background-color: #E4007F;
