@@ -74,7 +74,7 @@ a:hover{
 
 .btn{
     /* background-color: white; */
-    padding: 12px 24px;
+    padding: 8px 24px;
     text-align: center;
     border: 2px solid #151515;
     /* border: 2px solid #f075ae; */
@@ -84,7 +84,7 @@ a:hover{
     border-radius: 0;
     font-weight: bold;
     font-size: 1.2em;
-    /* margin-top: 16px; */
+    margin-top: 4px;
     position: relative;
     cursor: pointer;
 }
@@ -101,6 +101,18 @@ div.btn:hover{
     position: absolute;
     top:0;
     left: 0;
+}
+.btn::after{
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-image: url(../res/tap.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    /* right: calc(50% - 12px); */
+    right: -2px;
+    bottom: -2px;
+    background-size: contain;
 }
 .bold{
     font-weight: bold;
@@ -434,7 +446,7 @@ div.btn:hover{
     margin-top: .5rem;
     margin-bottom: 1rem;
     text-shadow: 0 0 8px white;
-    border-bottom: 2px solid #E4007F;
+    border-bottom: 3px solid #E4007F;
     display: inline-block;
 }
 #top-image .wrap3 li{
