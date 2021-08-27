@@ -61,9 +61,7 @@
                     $item->thumbnail = $now_url . "/res/noimage.jpg";
 
                     // 記事の中で最初に使われている画像を検索、設定する
-                    //  if( preg_match_all('/<img(.+?)>/is', $item->description, $matches) ){
-                    if( preg_match_all('<img ', $item->description, $matches) ){
-                        var_dump($matches);
+                     if( preg_match_all('/<img(.+?)>/is', $item->description, $matches) ){
                         foreach( $matches[0] as $img ){
                             var_dump('immmmmg' . $img);
                             if( preg_match('/src=[\'"](.+?jp?g)[\'"]/', $img, $m) ){
