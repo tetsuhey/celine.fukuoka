@@ -50,89 +50,55 @@
             */
              
             if(!preg_match('/^PR:/',$item->title )){
+                if($item->title == 'この記事は表示できません'){
+                    continue;
+                }
                 if($i < $max){
-                    var_dump($item);
-                  $timestamp = strtotime( $item->pubDate );
-                  $date = date( 'Y.m.d',$timestamp );
-                  // 画像がなかった場合のデフォルト画像を指定しておきます
-                //   $now_url = (empty($_SERVER["HTTPS"]) ? "http://" : "https://") . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-                $now_url = (empty($_SERVER["HTTPS"]) ? "http://" : "https://") . $_SERVER["HTTP_HOST"];
-                //   $item->thumbnail = trim($now_url,"/") . "/res/noimage.jpg";
-                $item->thumbnail = $now_url . "/res/noimage.jpg";
+                    $timestamp = strtotime( $item->pubDate );
+                    $date = date( 'Y.m.d',$timestamp );
+                    // 画像がなかった場合のデフォルト画像を指定しておきます
+                    $now_url = (empty($_SERVER["HTTPS"]) ? "http://" : "https://") . $_SERVER["HTTP_HOST"];
+                    $item->thumbnail = $now_url . "/res/noimage.jpg";
 
-                  // 記事の中で最初に使われている画像を検索、設定する
-                  if( preg_match_all('/<img(.+?)>/is', $item->description, $matches) ){
-                    foreach( $matches[0] as $img ){
-                        // $item->thumbnail = $img;
-                        if( preg_match('/src=[\'"](.+?jpe?g)[\'"]/', $img, $m) ){
-                            $item->thumbnail = $m[1];
+                    // 記事の中で最初に使われている画像を検索、設定する
+                    if( preg_match_all('/<img(.+?)>/is', $item->description, $matches) ){
+                        foreach( $matches[0] as $img ){
+                            if( preg_match('/src=[\'"](.+?jpe?g)[\'"]/', $img, $m) ){
+                                $item->thumbnail = $m[1];
+                            }
                         }
                     }
-                  }
 
-                  $output .= '<div class="row"><div class="col-12 col-md-6 offset-md-3">';
-                  $output .= '<a class="blogcont" href="'. $item->link .'" target="_blank">';
-                  $output .= '<div class="d-flex">';
-                  $output .= '<img class="blog_thumns" src="'.$item->thumbnail.'" alt="'.$item->title.'" />';
-                  $output .= '<div>';
-                  $output .= '<time datetime="' . $item->pubDate . '">' . $date . '</time>';
-                  $output .= '<p class="blogtitle">'.$item->title.'</p>';
-                  $output .= '<p class="godetail">この記事を読む>>></p>';
-                  $output .= '</div>';
-                  $output .= '</div>';
-                  $output .= '</a>';
-                  $output .= '</div></div>';
-                  $i++;
+                    $output .= '<div class="row"><div class="col-12 col-md-6 offset-md-3">';
+                    $output .= '<a class="blogcont" href="'. $item->link .'" target="_blank">';
+                    $output .= '<div class="d-flex">';
+                    $output .= '<img class="blog_thumns" src="'.$item->thumbnail.'" alt="'.$item->title.'" />';
+                    $output .= '<div>';
+                    $output .= '<time datetime="' . $item->pubDate . '">' . $date . '</time>';
+                    $output .= '<p class="blogtitle">'.$item->title.'</p>';
+                    $output .= '<p class="godetail">この記事を読む>>></p>';
+                    $output .= '</div>';
+                    $output .= '</div>';
+                    $output .= '</a>';
+                    $output .= '</div></div>';
+                    $i++;
                 }
             }
             
         }
-        $output .= '<div class="row"><div class="col-12 col-md-6 offset-md-3 center">';
-        $output .= '<a class="more btn" href="https://ameblo.jp/celine-fuk/entrylist.html" target="_blank">すべての記事へ</a>';
-        $output .= '</div></div>';
+        if($i > 0){
+            $output .= '<div class="row"><div class="col-12 col-md-6 offset-md-3 center">';
+            $output .= '<a class="more btn" href="https://ameblo.jp/celine-fuk/entrylist.html" target="_blank">すべての記事へ</a>';
+            $output .= '</div></div>';
+        }else{
+            $output .= '<div class="row"><div class="col-12 center">記事がありません。</div></div>';            
+        }
     }else{
-        $output .= '<div class="row"><div class="col-12 center">記事が見つかりませんでした。</div></div>';
+        $output .= '<div class="row"><div class="col-12 center">記事の取得に失敗しました。</div></div>';
     }
     echo $output;
 
 
 
-    function get_rss($url, $limit=5)
-    {
-        $rss = curl_get_contents($url);
-        $rss = simplexml_load_string($rss);
-        $results = array();
-
-        foreach( $rss->channel->item as $item ){
-
-            // PR: から始まる広告、指定数以上の記事は除く
-            if( preg_match("/^PR:.+/",$item->title) || ($limit >= 0 && count($results) >= $limit) ){
-                continue;
-            }
-
-            $timestamp = strtotime( $item->pubDate );
-            $item->date = date( 'Y.m.d',$timestamp );
-
-            // 画像がなかった場合のデフォルト画像を指定しておきます
-            $now_url = (empty($_SERVER["HTTPS"]) ? "http://" : "https://") . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-            $item->thumbnail = trim($now_url,"/") . "/res/noimage.jpg";
-
-            // 記事の中で最初に使われている画像を検索、設定する
-            if( preg_match_all('/<img(.+?)>/is', $item->description, $matches) ){
-                foreach( $matches[0] as $img ){
-                    if( preg_match('/src=[\'"](.+?jpe?g)[\'"]/', $img, $m) ){
-                        $item->thumbnail = $m[1];
-                    }
-                }
-            }
-
-            // レスポンス用のPHPへのパスへ設定する
-            $data = array("f" => (string)$item->thumbnail);
-            $item->thumbnail = sprintf("response.php?%s", http_build_query($data));
-
-            $results[] = $item;
-        }
-
-        return $results;
-    }
+    
 ?>
