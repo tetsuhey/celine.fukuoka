@@ -63,9 +63,8 @@
                     // 記事の中で最初に使われている画像を検索、設定する
                      if( preg_match_all('/<img(.+?)>/is', $item->description, $matches) ){
                         foreach( $matches[0] as $img ){
-                            var_dump('immmmmg' . $img);
-                            if( preg_match('/src=[\'"](.+?jp?g)[\'"]/', $img, $m) ){
-                                $item->thumbnail = $m[1];
+                            if( preg_match('/src=[\'"](.+?jpe?g)[\'"]/', $img, $m) ){
+                                $item->thumbnail = $m[0];
                             }
                         }
                     }
