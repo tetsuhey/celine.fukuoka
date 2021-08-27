@@ -51,6 +51,7 @@
              
             if(!preg_match('/^PR:/',$item->title )){
                 if($i < $max){
+                    var_dump($item);
                   $timestamp = strtotime( $item->pubDate );
                   $date = date( 'Y.m.d',$timestamp );
                   // 画像がなかった場合のデフォルト画像を指定しておきます
