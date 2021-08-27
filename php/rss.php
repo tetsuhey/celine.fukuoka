@@ -58,7 +58,8 @@
                     $date = date( 'Y.m.d',$timestamp );
                     // 画像がなかった場合のデフォルト画像を指定しておきます
                     $now_url = (empty($_SERVER["HTTPS"]) ? "http://" : "https://") . $_SERVER["HTTP_HOST"];
-                    $item->thumbnail = $now_url . "/res/noimage.jpg";
+                    $def_img = $now_url . "/res/noimage.jpg";
+                    $item->thumbnail = $def_img;
 
                     // 記事の中で最初に使われている画像を検索、設定する
                      if( preg_match_all('/<img(.+?)>/is', $item->description, $matches) ){
@@ -73,7 +74,11 @@
                     $output .= '<div class="row"><div class="col-12 col-md-6 offset-md-3">';
                     $output .= '<a class="blogcont" href="'. $item->link .'" target="_blank">';
                     $output .= '<div class="d-flex">';
-                    $output .= '<img class="blog_thumns" src="'.$item->thumbnail.'" alt="'.$item->title.'" />';
+                    if(preg_match('og-img.jpg',$item->thumbnail)){
+                        $output .= '<img class="blog_thumns" src="'.$def_img.'" alt="'.$item->title.'" />';                
+                    }else{
+                        $output .= '<img class="blog_thumns" src="'.$item->thumbnail.'" alt="'.$item->title.'" />';
+                    }
                     $output .= '<div>';
                     $output .= '<time datetime="' . $item->pubDate . '">' . $date . '</time>';
                     $output .= '<p class="blogtitle">'.$item->title.'</p>';
