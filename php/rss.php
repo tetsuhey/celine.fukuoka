@@ -50,7 +50,7 @@
             */
              
             if(!preg_match('/^PR:/',$item->title )){
-                if($item->title == 'この記事は表示できません'){
+                if($item->title == 'この記事は表示できません' || $item->title == 'この記事は公開停止中です'){
                     continue;
                 }
                 if($i < $max){
@@ -62,8 +62,9 @@
 
                     // 記事の中で最初に使われている画像を検索、設定する
                     if( preg_match_all('/<img(.+?)>/is', $item->description, $matches) ){
+                        var_dump($matches);
                         foreach( $matches[0] as $img ){
-                            if( preg_match('/src=[\'"](.+?jpe?g)[\'"]/', $img, $m) ){
+                            if( preg_match('/src=[\'"](.+?jp?g)[\'"]/', $img, $m) ){
                                 $item->thumbnail = $m[1];
                             }
                         }
