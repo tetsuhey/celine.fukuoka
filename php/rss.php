@@ -74,7 +74,7 @@
                     $output .= '<div class="row"><div class="col-12 col-md-6 offset-md-3">';
                     $output .= '<a class="blogcont" href="'. $item->link .'" target="_blank">';
                     $output .= '<div class="d-flex">';
-                    if(preg_match('og-img.jpg',$item->thumbnail)){
+                    if(preg_match('/og-img.jpg/',$item->thumbnail)){
                         $output .= '<img class="blog_thumns" src="'.$def_img.'" alt="'.$item->title.'" />';                
                     }else{
                         $output .= '<img class="blog_thumns" src="'.$item->thumbnail.'" alt="'.$item->title.'" />';
