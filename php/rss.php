@@ -64,8 +64,8 @@
                      if( preg_match_all('/<img(.+?)>/is', $item->description, $matches) ){
                         foreach( $matches[0] as $img ){
                             if( preg_match('/src=[\'"](.+?jpe?g)[\'"]/', $img, $m) ){
-                                var_dump($m);
                                 $item->thumbnail = $m[1];
+                                break;
                             }
                         }
                     }
