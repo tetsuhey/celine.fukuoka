@@ -943,14 +943,18 @@ h2.en_title{
     width: 100%;
     margin-top: 48px;
 }
+.roomcap h3{
+    color:#f075ae;
+    margin-bottom:1.3rem;
+}
 .roomcap p{
     width: 100%;
-    padding: 2rem;
-    font-size: 1.2rem;
+    padding: 1.5rem;
+    font-size: 1.1rem;
     position: relative;
     border-radius: 8px;
     /* text-align:center; */
-    line-height:2rem;
+    /* line-height:2rem; */
     background-size: auto auto;
     background-color: #F3E2F2;
     background-image: repeating-linear-gradient(45deg, transparent, transparent 16px, #F7EDF7 16px, #F7EDF7 32px );
@@ -1399,6 +1403,10 @@ h2.en_title{
 #office .office-cap h3{
     color:#f075ae;
     margin-bottom:8px;
+}
+#office .office-cap img{
+    width:calc(100% - 16px);
+    margin-top:16px;
 }
 @media screen and (min-width:767px){
     #office .custome_dott_wrap{
