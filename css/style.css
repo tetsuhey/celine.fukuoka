@@ -945,20 +945,22 @@ h2.en_title{
 }
 .roomcap p{
     width: 100%;
-    padding: 3rem 0 1.5rem;
-    font-size: 1.35rem;
+    padding: 2rem;
+    font-size: 1.2rem;
     position: relative;
     border-radius: 8px;
+    /* text-align:center; */
+    line-height:2rem;
     background-size: auto auto;
     background-color: #F3E2F2;
     background-image: repeating-linear-gradient(45deg, transparent, transparent 16px, #F7EDF7 16px, #F7EDF7 32px );
 }
 .roomcap p::before{
-    content:"かわいく/";
+    /* content:"かわいく/";
     position: absolute;
     top: .62rem;
     left:calc(50% - 8.2rem);
-    font-size: 1rem;
+    font-size: 1rem; */
 }
 @media screen and (min-width:576px){
     .chatlady_desc_wrap div h4 strong{
@@ -970,10 +972,10 @@ h2.en_title{
     #chatlady .office-imgs img{
         width: 50%;
     }
-    #chatlady .office-imgs img:nth-child(1){
+    #chatlady .office-imgs img:nth-child(odd){
         padding-right: 8px;
     }
-    #chatlady .office-imgs img:nth-child(2){
+    #chatlady .office-imgs img:nth-child(even){
         padding-left: 8px;
     }
     .chatlady_desc_wrap .chatdesc{
@@ -1391,6 +1393,13 @@ h2.en_title{
     margin-top: 24px;
     margin-bottom: -16px;
 }
+#office .office-cap{
+    margin-top:17px;
+}
+#office .office-cap h3{
+    color:#f075ae;
+    margin-bottom:8px;
+}
 @media screen and (min-width:767px){
     #office .custome_dott_wrap{
         margin-top: 16px;
@@ -1411,6 +1420,9 @@ h2.en_title{
         bottom: 0;
         left: 0;
         right: 0;
+    }
+    #office .office-cap{
+        margin-top:32px;
     }
 }
 @media screen and (min-width:993px) {
