@@ -408,15 +408,21 @@ div.btn:hover{
 #top-image .wrap1{
     width: 80vw;
     max-width: 400px;
+    height: 7rem;
 }
 #top-image .wrap1 h1{
     width: 100%;
+    max-width: 300px;
+    position: absolute;
+    top: -20px;
+    z-index: 1;
 }
 #top-image .wrap1 p{
     left: 16px;
     top: -1rem;
     line-height: 1.4;
     position: absolute;
+    z-index: 2;
 }
 #top-image .wrap1 small{
     top: 1.3rem;
@@ -504,29 +510,8 @@ div.btn:hover{
   border-bottom: solid 8px transparent;
   border-right: solid 2.2vw #e2ced8;/*折り返し部分*/
 }
-#top-image .wrap4::after{
-    /* position: absolute;
-  content: '';
-  top: 100%;
-  right: 0;
-  border: none;
-  border-bottom: solid 8px transparent;
-  border-left: solid 2.2vw #e2ced8; */
-}
 #top-image .wrap4 span{
-    /* color: white;
-    text-shadow: 0 0 10px rgb(228 0 127 / 30%);
-    font-size: 4rem; */
     border-bottom: 3px solid #E4007F;
-}
-#top-image .wrap4 p span:nth-child(1){
-    /* font-size: 1.7rem;
-    line-height: 4.5rem; */
-}
-#top-image .wrap4 small{
-    /* line-height: 1rem;
-    margin-top: .7rem;
-    display: inline-block; */
 }
 #top-image .wrap5{
     position: absolute;
@@ -591,6 +576,9 @@ div.btn:hover{
     #top-image .wrap1{
         margin-left: calc(50% - 400px);
         margin-top: 24px;
+    }
+    #top-image .wrap1 h1{
+        max-width: unset;
     }
     #top-image .wrap1 p{
         left: 5vw;
