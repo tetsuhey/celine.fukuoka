@@ -76,7 +76,7 @@ if(strlen($inquery) > 0){
     $message .= "\r\n\r\n[お問い合わせ内容]\r\n".$inquery;
 }
 
-$headers = "From:webservice@chat-fukuoka.com";
+$headers = "From:webmaster@chatlady-celine.com";
 mb_language("ja");
 mb_internal_encoding("UTF-8");
 $is_send_mail_flg = false;
@@ -122,7 +122,7 @@ if(strlen($mail) > 0){
     $message .= "内容にお心当たりの無い方は、大変お手数ですが削除をお願いいたします。\r\n";
     $message .= "なお、本メールへの返信はできませんので、予めご了承ください。\r\n\r\n\r\n";
     
-    $headers = "From: celine | セリーヌ <webservice@chat-fukuoka.com>";
+    $headers = "From: celine | セリーヌ <webmaster@chatlady-celine.com>";
 
     mb_send_mail($to, $subject, $message, $headers);
 }
