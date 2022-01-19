@@ -1,5 +1,9 @@
 $(function(){
     var isHome = ($(location).attr('origin') + '/' ==  $(location).attr('href')) ? true:false;
+    //console.log(location.pathname);
+    if(location.pathname == '/' || location.pathname == '/index.html'){
+        isHome = true;
+    }
     if(isHome){
         $.ajax({
             type: "GET",
