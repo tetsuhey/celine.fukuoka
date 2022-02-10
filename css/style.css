@@ -1684,9 +1684,9 @@ form .formRow{
 }
 @media screen and (min-width:767px){
     .another-apply .btn{
-        max-width: 30%;
+        /* max-width: 30%;
         margin: 16px 10px;
-        margin-top: 32px;
+        margin-top: 32px; */
     }
     #apply .another-apply .btn span{
         padding-left: 24px;
